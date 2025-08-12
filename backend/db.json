@@ -1,0 +1,325 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Tour trong nước",
+      "description": "Các tour du lịch khám phá khắp Việt Nam."
+    },
+    {
+      "id": 2,
+      "name": "Tour quốc tế",
+      "description": "Các tour tham quan, nghỉ dưỡng tại nước ngoài."
+    },
+    {
+      "id": 3,
+      "name": "Tour trọn gói",
+      "description": "Bao gồm vé máy bay, khách sạn, hướng dẫn viên."
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Tour Nha Trang 4 ngày 3 đêm",
+      "destination": "Nha Trang, Khánh Hòa",
+      "destinationSuggestions": ["Nha Trang", "Đà Nẵng", "Phú Quốc", "Hạ Long"],
+      "departure": "TP. Hồ Chí Minh",
+      "startDate": "2025-09-15",
+      "endDate": "2025-09-18",
+      "duration": "4 ngày 3 đêm",
+      "durationRange": "4-7 ngày",
+      "price": 4990000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2025/04/thap-ba-ponagar.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/2025/04/chua-long-son-nha-trang.jpg"
+      ],
+      "description": "Trải nghiệm kỳ nghỉ tuyệt vời tại Nha Trang với bãi biển xanh, cát trắng và nhiều hoạt động giải trí hấp dẫn.",
+      "highlights": [
+        "Tắm biển và lặn ngắm san hô tại Hòn Mun",
+        "Tham quan VinWonders Nha Trang",
+        "Thưởng thức hải sản tươi ngon"
+      ],
+      "categoryid": 1,
+      "isfeatured": true
+    },
+    {
+      "id": 2,
+      "name": "Tour Đà Nẵng - Hội An 5 ngày 4 đêm",
+      "destination": "Đà Nẵng, Hội An",
+      "destinationSuggestions": ["Đà Nẵng", "Hội An", "Huế", "Phú Quốc"],
+      "departure": "Hà Nội",
+      "startDate": "2025-09-20",
+      "endDate": "2025-09-24",
+      "duration": "5 ngày 4 đêm",
+      "durationRange": "4-7 ngày",
+      "price": 5790000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2023/06/cau-vang-da-nang.png",
+        "https://www.luavietours.com/wp/wp-content/uploads/2023/06/hoi-an-viet-nam.png"
+      ],
+      "description": "Khám phá phố cổ Hội An, bãi biển Mỹ Khê và Bà Nà Hills.",
+      "highlights": [
+        "Đi cáp treo Bà Nà Hills",
+        "Check-in Cầu Vàng nổi tiếng",
+        "Tham quan phố cổ Hội An về đêm"
+      ],
+      "categoryid": 1,
+      "isfeatured": false
+    },
+    {
+      "id": 3,
+      "name": "Tour Hà Nội - Hạ Long 3 ngày 2 đêm",
+      "destination": "Vịnh Hạ Long, Quảng Ninh",
+      "destinationSuggestions": ["Hạ Long", "Sapa", "Ninh Bình", "Hà Giang"],
+      "departure": "Hà Nội",
+      "startDate": "2025-08-20",
+      "endDate": "2025-08-22",
+      "duration": "3 ngày 2 đêm",
+      "durationRange": "1-3 ngày",
+      "price": 3290000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2023/06/lang-chu-tich-ho-chi-minh.png",
+        "https://www.luavietours.com/wp/wp-content/uploads/2023/07/ban-cat-cat-sapa.png"
+      ],
+      "description": "Trải nghiệm du thuyền 5 sao trên vịnh Hạ Long, chiêm ngưỡng những hang động kỳ vĩ và làng chài yên bình.",
+      "highlights": [
+        "Du thuyền 5 sao với buffet hải sản",
+        "Tham quan hang Sửng Sốt",
+        "Chèo kayak khám phá vịnh"
+      ],
+      "categoryid": 1,
+      "isfeatured": true
+    },
+    {
+      "id": 4,
+      "name": "Tour Sapa 4 ngày 3 đêm",
+      "destination": "Sapa, Lào Cai",
+      "destinationSuggestions": ["Sapa", "Hà Giang", "Ninh Bình", "Đà Lạt"],
+      "departure": "Hà Nội",
+      "startDate": "2025-09-10",
+      "endDate": "2025-09-13",
+      "duration": "4 ngày 3 đêm",
+      "durationRange": "4-7 ngày",
+      "price": 4590000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2023/07/dinh-fansipan-sapa.png",
+        "https://www.luavietours.com/wp/wp-content/uploads/2023/07/hang-mua-ninh-binh.png"
+      ],
+      "description": "Khám phá ruộng bậc thang, Fansipan và văn hóa người H'Mông.",
+      "highlights": [
+        "Đi cáp treo Fansipan",
+        "Tham quan bản Cát Cát",
+        "Chợ phiên Bắc Hà"
+      ],
+      "categoryid": 1,
+      "isfeatured": false
+    },
+    {
+      "id": 5,
+      "name": "Tour Singapore - Malaysia 6 ngày 5 đêm",
+      "destination": "Singapore, Malaysia",
+      "destinationSuggestions": ["Singapore", "Malaysia", "Thái Lan", "Hàn Quốc"],
+      "departure": "Hà Nội",
+      "startDate": "2025-10-10",
+      "endDate": "2025-10-15",
+      "duration": "6 ngày 5 đêm",
+      "durationRange": "4-7 ngày",
+      "price": 15990000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2025/01/1-singapore-gay-an-tuong-voi-moi-truong-xanh-sach-dep.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/2025/01/2-su-tich-ten-goi-day-ki-bi-tai-singapore.jpg"
+      ],
+      "description": "Khám phá văn hóa đa dạng, các công trình kiến trúc hiện đại và mua sắm tại thiên đường shopping Đông Nam Á.",
+      "highlights": [
+        "Tham quan Marina Bay Sands và Gardens by the Bay",
+        "Trải nghiệm Sentosa Island",
+        "Thưởng thức ẩm thực đường phố Penang"
+      ],
+      "categoryid": 2,
+      "isfeatured": true
+    },
+    {
+      "id": 6,
+      "name": "Tour Thái Lan 5 ngày 4 đêm",
+      "destination": "Bangkok, Pattaya",
+      "destinationSuggestions": ["Thái Lan", "Singapore", "Malaysia", "Hàn Quốc"],
+      "departure": "TP. Hồ Chí Minh",
+      "startDate": "2025-11-01",
+      "endDate": "2025-11-05",
+      "duration": "5 ngày 4 đêm",
+      "durationRange": "4-7 ngày",
+      "price": 10990000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2024/08/2-chua-wat-phra-yai-noi-tieng-voi-tuong-phat-vang-cao-den-18m.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/2024/08/3-ve-dep-doc-dao-cua-he-thong-kenh-rach-tai-thai-lan.jpg"
+      ],
+      "description": "Tham quan chùa Vàng, đảo san hô và trải nghiệm ẩm thực Thái.",
+      "highlights": [
+        "Dạo thuyền trên sông Chao Phraya",
+        "Tham quan cung điện Hoàng Gia",
+        "Show Alcazar Cabaret"
+      ],
+      "categoryid": 2,
+      "isfeatured": false
+    },
+    {
+      "id": 7,
+      "name": "Tour Nhật Bản 7 ngày 6 đêm",
+      "destination": "Tokyo, Kyoto, Osaka",
+      "destinationSuggestions": ["Nhật Bản", "Hàn Quốc", "Trung Quốc", "Đài Loan"],
+      "departure": "Hà Nội",
+      "startDate": "2025-12-01",
+      "endDate": "2025-12-07",
+      "duration": "7 ngày 6 đêm",
+      "durationRange": "8-14 ngày",
+      "price": 35990000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2024/06/1-nhung-dieu-thu-vi-ve-nhat-ban-chinh-la-quoc-gia-nay-khong-co-thu-do.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/2024/06/3-tap-tuc-coi-giay-truoc-khi-vao-nha-rat-pho-bien-tai-nhat-ban.jpg"
+      ],
+      "description": "Khám phá mùa lá đỏ Nhật Bản với những ngôi chùa cổ kính và cảnh quan tuyệt đẹp.",
+      "highlights": [
+        "Núi Phú Sĩ",
+        "Chùa Kiyomizu-dera",
+        "Phố cổ Gion"
+      ],
+      "categoryid": 2,
+      "isfeatured": true
+    },
+    {
+      "id": 8,
+      "name": "Tour Hàn Quốc 5 ngày 4 đêm",
+      "destination": "Seoul, Nami, Busan",
+      "destinationSuggestions": ["Hàn Quốc", "Nhật Bản", "Đài Loan", "Thái Lan"],
+      "departure": "TP. Hồ Chí Minh",
+      "startDate": "2025-10-20",
+      "endDate": "2025-10-24",
+      "duration": "5 ngày 4 đêm",
+      "durationRange": "4-7 ngày",
+      "price": 18990000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2025/01/1-mot-so-bi-quyet-mua-sam-tiet-kiem-tai-han-quoc-du-khach-khong-the-bo-lo.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/2025/01/3-cac-thuong-hieu-my-pham-han-quoc-kha-duoc-ua-chuong-hien-nay.jpg"
+      ],
+      "description": "Tham quan đảo Nami, cung điện Gyeongbokgung và chợ đêm Myeongdong.",
+      "highlights": [
+        "Mặc hanbok truyền thống",
+        "Đi bộ trên cầu kính Sky Walk",
+        "Trải nghiệm làm kimchi"
+      ],
+      "categoryid": 2,
+      "isfeatured": false
+    },
+    {
+      "id": 9,
+      "name": "Tour Phú Quốc 4 ngày 3 đêm (trọn gói)",
+      "destination": "Phú Quốc, Kiên Giang",
+      "destinationSuggestions": ["Phú Quốc", "Nha Trang", "Đà Nẵng", "Hạ Long"],
+      "departure": "TP. Hồ Chí Minh",
+      "startDate": "2025-08-25",
+      "endDate": "2025-08-28",
+      "duration": "4 ngày 3 đêm",
+      "durationRange": "4-7 ngày",
+      "price": 6990000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2024/11/grand-world-phu-quoc.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/2023/05/phu-quoc.jpeg"
+      ],
+      "description": "Tour trọn gói nghỉ dưỡng tại resort 5 sao, bao gồm vé máy bay khứ hồi.",
+      "highlights": [
+        "Tắm biển Bãi Sao",
+        "Tham quan VinWonders & Safari",
+        "Câu cá, lặn ngắm san hô"
+      ],
+      "categoryid": 3,
+      "isfeatured": true
+    },
+    {
+      "id": 10,
+      "name": "Tour Đà Lạt 3 ngày 2 đêm (trọn gói)",
+      "destination": "Đà Lạt, Lâm Đồng",
+      "destinationSuggestions": ["Đà Lạt", "Sapa", "Ninh Bình", "Huế"],
+      "departure": "TP. Hồ Chí Minh",
+      "startDate": "2025-09-05",
+      "endDate": "2025-09-07",
+      "duration": "3 ngày 2 đêm",
+      "durationRange": "1-3 ngày",
+      "price": 3790000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2018/09/da-lat.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/contents_luavietours/upload/Image/lua-viet-tour-da-lat-tet-binh-than-1phan-tram20phan-tram282phan-tram29.jpg"
+      ],
+      "description": "Tour trọn gói nghỉ dưỡng, tham quan các điểm nổi tiếng ở Đà Lạt.",
+      "highlights": [
+        "Vườn hoa thành phố",
+        "Thác Datanla",
+        "Quảng trường Lâm Viên"
+      ],
+      "categoryid": 3,
+      "isfeatured": false
+    },
+    {
+      "id": 11,
+      "name": "Tour Huế - Đà Nẵng - Hội An 5 ngày 4 đêm (trọn gói)",
+      "destination": "Huế, Đà Nẵng, Hội An",
+      "destinationSuggestions": ["Huế", "Đà Nẵng", "Hội An", "Quảng Bình"],
+      "departure": "Hà Nội",
+      "startDate": "2025-09-12",
+      "endDate": "2025-09-16",
+      "duration": "5 ngày 4 đêm",
+      "durationRange": "4-7 ngày",
+      "price": 6390000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/2025/06/6-khong-gian-day-thanh-binh-va-trong-lanh-tai-lang-huong.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/2025/06/3-thang-3-den-thang-8-la-thoi-gian-thich-hop-de-kham-pha-lang-huong.jpg"
+      ],
+      "description": "Tour trọn gói khám phá di sản miền Trung.",
+      "highlights": [
+        "Đại Nội Huế",
+        "Cầu Vàng Bà Nà Hills",
+        "Phố cổ Hội An"
+      ],
+      "categoryid": 3,
+      "isfeatured": true
+    },
+    {
+      "id": 12,
+      "name": "Tour Bangkok - Chiang Mai 7 ngày 6 đêm (trọn gói)",
+      "destination": "Bangkok, Chiang Mai",
+      "destinationSuggestions": ["Bangkok", "Chiang Mai", "Pattaya", "Phuket"],
+      "departure": "TP. Hồ Chí Minh",
+      "startDate": "2025-11-15",
+      "endDate": "2025-11-21",
+      "duration": "7 ngày 6 đêm",
+      "durationRange": "8-14 ngày",
+      "price": 18990000,
+      "images": [
+        "https://www.luavietours.com/wp/wp-content/uploads/contents_luavietours/upload/Image/du-lich-bangkok-1.jpg",
+        "https://www.luavietours.com/wp/wp-content/uploads/contents_luavietours/upload/Image/du-lich-bangkok-2.jpg"
+      ],
+      "description": "Tour trọn gói khám phá Bangkok sôi động và Chiang Mai yên bình.",
+      "highlights": [
+        "Chùa Trắng Wat Rong Khun",
+        "Chợ đêm Chiang Mai",
+        "Hoàng cung Bangkok"
+      ],
+      "categoryid": 3,
+      "isfeatured": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn A",
+      "email": "a@example.com",
+      "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": 2,
+      "name": "Trần Thị B",
+      "email": "b@example.com",
+      "password": "abcdef",
+      "role": "admin"
+    }
+  ]
+}
