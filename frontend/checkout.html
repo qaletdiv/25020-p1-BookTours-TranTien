@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Thanh Toán</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <img
+            src="https://www.luavietours.com/assets/img/common/logo.jpg"
+            alt=""
+          />
+          <nav>
+<a href="home.html">Trang Chủ</a>
+            <a href="#">Giới Thiệu</a>
+            <a href="product-category.html">Tour Du Lịch</a>
+            <a href="#">Tin Tức</a>
+            <a href="#">Liên Hệ</a>
+            <a href="login.html" id="login">Đăng Nhập</a>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            
+          </nav>
+          <div>
+            <select name="" id="">
+              <option value="Tiếng Việt">Tiếng Việt</option>
+              <option value="Tiếng Anh">Tiếng Anh</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <h2 class="general-guest">Tổng Quan Về Chuyến Đi</h2>
+        <div class="checkout">
+        <div class="main-content">
+            <div class="infomation">
+            <h3>Thông Tin Liên Lạc</h3>
+            <div class="info-guest">
+                <div class="name">
+                <label for="">Họ Và Tên</label><br>
+                <input type="text" id="name" placeholder="Nhập Họ và tên">
+                </div>
+                <div class="email-guest">
+                <label for="">Email</label><br>
+                <input type="email" id="e-mail" placeholder="Nhập Email">
+                </div>
+                <div class="phone-number">
+                <label for="">Số điện thoại</label><br>
+                <input type="number" id="phone" placeholder="Nhập SĐT">
+                </div>
+                <div class="adress-guest">
+                <label for="">Địa Chỉ</label><br>
+                <input type="text" id="address" placeholder="Nhập địa chỉ liên hệ">
+                </div>
+                <button class="btn-save">Lưu Lại</button>
+            </div>
+
+            </div>
+            <!-- <div class="quantity">
+            <h3>Hành Khách</h3>
+            <div class="quantity-guest">
+                <p>Người Lớn</p>
+                <div class="count-guest">
+                <button class="plus">+</button>
+                <p class="count-number">0</p>
+                <button class="minus">-</button>
+                </div>
+            </div>
+            </div> -->
+            <!-- <div class="note-more">
+            <h3>Ghi Chú Thêm</h3>
+            <div class="textarea-background">
+            <textarea name="" id="" placeholder="Ghi chú thêm"></textarea>
+            </div>
+            </div> -->
+            <h3>Phương Thức Thanh Toán</h3>
+            <div class="payment-methods">
+    <label class="payment-option">
+    <input type="radio" name="payment" checked>
+    <span>Thanh toán tại văn phòng Lửa Việt</span>
+  </label>
+
+
+  <label class="payment-option">
+    <input type="radio" name="payment">
+    <span>Thanh toán online</span>
+  </label>
+</div>
+        </div>
+        <div class="aside-content">
+            <div class="booking-tour">
+                  <!-- <p class="tourId">
+                  <i class="fa-solid fa-ticket"></i> Mã tour:
+                  <span style="font-weight: 600">MIEN TRUNGDANANG</span>
+                </p>
+                <p class="tourName">
+                CAMPUCHIA 4N3Đ | SIEM REAP - PHNOM PENH - OUDONG
+                </p>
+                <p class="timing">Thời lượng: 4N3Đ</p>
+                <p class="startdes">
+                  <i class="fa-solid fa-plane"></i> Nơi khởi hành:
+                  <span style="font-weight: 600">TP Hồ Chí Minh</span>
+                </p>
+                <hr> -->               
+            </div>
+                  <p>
+                  <span style="color: red; font-weight: 650; font-size: 1.3rem" id="last-total"
+                    >Tổng Cộng: 
+                  </span>
+                  <span style="color: red; font-weight: 650; font-size: 0.8rem"
+                    >VNĐ</span
+                  >
+                </p>
+                <button class="btn-tour">Đặt Ngay</button>   
+        </div>
+      </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+            <div>
+        <p class="inDam">LỬA VIỆT - CÔNG TY DU LỊCH THẾ GIỚI</p>
+        <br>
+        <p>Chạm Nha Trang tự hào là đơn vị cung cấp dịch vụ du lịch uy tín trên thế giới năm 2025.</p>
+        <br>
+        <p>Địa chỉ: 295 Đường 2/4, Bắc Nha Trang, Nha Trang, Khánh Hòa</p>
+      </div>
+            <div>
+        <p class="inDam">Về Chúng Tôi</p>
+        <br>
+        <p>Giới thiệu công ty</p>
+        <p>Tuyển dụng</p>
+        <p>Điều khoản sử dụng</p>
+        <p>Chính sách bảo mật</p>
+      </div>
+            <div> 
+        <p class="inDam">Thông tin thêm</p>
+        <br>
+        <p>Hướng dẫn đặt tour</p>
+        <p>Quy định hủy tour</p>
+        <p>Đặt tour & thanh toán</p>
+        <p>Kinh nghiệm du lịch</p>
+      </div>
+            <div>
+        <p class="inDam">Chăm sóc khách hàng</p>
+        <br>
+        <p><i class="fa-solid fa-envelope"></i> sales@luaviet.com</p>
+        <p><i class="fa-solid fa-phone"> </i> 079 369 1709</p>        
+      </div>
+      </div>
+        </div>
+      </div>
+    </footer>
+    <script src="checkout.js"></script>
+  </body>
+</html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="popup.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
@@ -25,32 +26,47 @@
             src="https://www.luavietours.com/assets/img/common/logo.jpg"
             alt=""
           />
+          <div id="toggle" style="order: 4"><i class="fas fa-bars"></i></div>
           <nav>
+          <a href="home.html">Trang Chủ</a>
             <a href="#">Giới Thiệu</a>
-            <a href="#">Du Lịch</a>
-            <a href="#">Tour Đoàn Khách</a>
+            <a href="product-category.html">Tour Du Lịch</a>
             <a href="#">Tin Tức</a>
             <a href="#">Liên Hệ</a>
-            <a href="#">Tuyển Dụng</a>
+            <a href="login.html" id="login">Đăng Nhập</a>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
           </nav>
-          <div>
-            <select name="" id="">
-              <option value="Tiếng Việt">Tiếng Việt</option>
-              <option value="Tiếng Anh">Tiếng Anh</option>
-            </select>
-          </div>
         </div>
       </div>
     </header>
     <section class="banner">
-      <img
-        src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/thansksbanner-website-pc.png"
-        alt=""
-      />
+<div class="mySlides fade">
+  <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/thansksbanner-website-pc.png" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/BANNER-NHAT-BAN-WEB.png" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/BANNER-WEBSITE-HAN-QUOC-pc-2048x545.png" style="width:100%">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
     </section>
     <main>
       <div class="container">
         <div class="main-content">
+         
           <section class="tourNoiBat">
             <h2>Tour Nổi Bật</h2>
             <div class="tours" id="tour-noi-bat">
@@ -61,7 +77,8 @@
             <h2>Tour Ngoài Nước</h2>
             <div class="tours" id="tour-ngoai-nuoc">
             </div>
-            <button class="btn-tour">Xem Thêm</button>
+            <!-- Nút mở popup -->
+            <button class="btn-tour" id="openPopup">Đăng ký tư vấn</button>
           </section>
           <section class="favoriteTour">
             <h2>Điểm Đến Yêu Thích</h2>
@@ -136,6 +153,35 @@
         </div>
       </div>
     </footer>
+<!-- Popup -->
+<div id="popupForm" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close">&times;</span>
+    <!-- Form copy từ popup.html -->
+    <div class="form-container otp-u">
+      <h2>Đăng Ký Liên Hệ</h2>
+      <p>Vui lòng điền form dưới đây và gửi cho chúng tôi</p>
+      <form action="#" method="post">
+        <label for="name">Tên khách hàng <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required>
+        <label for="phone">Điện thoại <span class="required">*</span></label>
+        <input type="text" id="phone" name="phone" required>
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
+        <label for="service">Tour quan tâm</label>
+        <select id="service" name="service">
+          <option value="">Vui lòng chọn</option>
+          <option value="domestic">Tour trong nước</option>
+          <option value="foreign">Tour ngoài nước</option>
+        </select>
+        <label for="message">Mô tả</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+        <button type="submit">Gửi yêu cầu tư vấn</button>
+      </form>
+    </div>
+  </div>
+</div>
+
     <script src="main.js"></script>
   </body>
 </html>

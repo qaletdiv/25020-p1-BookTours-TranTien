@@ -1,0 +1,377 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+header .header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  padding: 20px 30px;
+}
+
+.header-content img {
+  width: 9.6875rem;
+  height: 2.6875rem;
+}
+
+.header-content nav {
+  display: flex;
+  gap: 2.1875rem;
+  align-items: center;
+}
+
+.header-content a {
+  text-decoration: none;
+  color: #013879;
+  font-weight: 500;
+}
+
+.main-content .tour-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content .info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timing {
+  font-size: 0.8rem;
+  margin: 0 0 6px 0;
+  font-weight: 400;
+}
+
+.tourName {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+}
+
+.tourId {
+  font-size: 0.9rem;
+  margin: 0 0 6px 0;
+}
+
+.startdes {
+  font-size: 0.9rem;
+  margin: 0 0 6px 0;
+}
+
+.btn-tour {
+  width: 223px;
+  height: 56px;
+  background-color: #ed1b35;
+  color: white;
+  font-size: 18px;
+  border: none;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-tour:hover {
+  background-color: #0095dc;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 149, 220, 0.6);
+}
+
+.main-content .tour-image {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem;
+  margin: 3rem 0;
+}
+
+.main-content .image-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1);
+  gap: 0 0.2rem;
+}
+
+.tour-image img {
+  width: 100%;
+  height: 28.87rem;
+}
+
+.image-4 img {
+  height: 14.37rem;
+}
+
+.main-content .infomation-tour {
+  display: grid;
+  grid-template-columns: 65% 30%;
+  gap: 5%;
+}
+
+.infomation-tour .general h2, .infomation-tour .general h3{
+  color: rgb(1, 56, 121);
+  margin-bottom: 1rem;
+}
+
+.general ul {
+  padding-left: 3rem;
+  margin-top: 1rem;
+}
+
+.infomation-tour .booking {
+  box-shadow: 10px 0 15px rgba(0, 12, 18, 0.2);
+}
+
+.booking {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items: flex-start;
+  padding: 0 25px;
+  height: 347.09px;
+}
+
+.box-booking {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.box-booking ul {
+  margin: 0.5rem 0;
+  margin-left: 1rem;
+}
+
+.box-booking p {
+  align-self: center;
+  margin: 1rem 0;
+}
+
+.box-booking button {
+  align-self: center;
+  width: 100%;
+}
+
+.box-booking .btn-tour:hover {
+  background-color: #0095dc;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 149, 220, 0.6);
+}
+
+.container .heading2 {
+  margin: 3rem 0;
+  font-size: 2.5rem;
+  color: #013879;
+}
+
+.cart-table {
+  max-width: 900px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cart-table table {
+  width: 100%;
+  border-collapse: collapse; /*Mặc định mỗi ô trong bảng có đường viền riêng. Các đường viền của ô liền kề gộp chung lại thành một đường duy nhất.*/
+  text-align: center;
+}
+
+.cart-table th {
+  background: #f8f8f8;
+  font-weight: bold;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.cart-table .product {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-table .product img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-table .product .title {
+  text-align: left;
+  color: #0066cc;
+  cursor: pointer;
+}
+
+.cart-table .remove {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+}
+
+.cart-table .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-table .quantity button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+.cart-table .quantity input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+  height: 30px;
+}
+
+.cart-total-box {
+  max-width: 350px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  background: #fff;
+}
+
+.cart-total-box h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-row .label {
+  font-weight: bold;
+}
+
+.cart-row .value {
+  font-weight: normal;
+}
+
+.cart-row.total .value {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.shipping p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.shipping a {
+  display: inline-block;
+  margin-top: 4px;
+  color: #0066cc;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.shipping a:hover {
+  text-decoration: underline;
+}
+
+.coupon {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #ed1b35;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #0095dc;
+  background: rgba(0, 149, 220, 0.6);
+  box-shadow: 0 0 15px rgba(0, 149, 220, 0.6);
+}
+
+.main-container-cart {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+ .booking-summary .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+  }
+  .booking-summary .row span:first-child {
+    font-weight: 600;
+  }
+  .booking-summary .total {
+    border-top: 2px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 1.1rem;
+  }
+
+footer {
+  background-color: #013879;
+  color: white;
+  padding: 10px 0;
+  margin-top: 3rem;
+}
+
+footer .footer-content {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 3rem;
+  background-color: #013879;
+}
+
+footer p {
+  color: white;
+}
+
+.inDam {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+

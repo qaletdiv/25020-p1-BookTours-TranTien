@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Bai Jamjuree", sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+header .header-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  padding: 20px 30px;
+}
+
+.header-content img {
+  width: 9.6875rem;
+  height: 2.6875rem;
+}
+
+.header-content nav {
+  display: flex;
+  gap: 2.1875rem;
+  align-items: center;
+}
+
+.header-content a {
+  text-decoration: none;
+  color: #013879;
+  font-weight: 500;
+}
+
+.main-content{
+    margin: 3rem auto;
+    padding: 0 auto;
+    text-align: center;
+}
+
+form {
+  width: 460px;
+  height: auto;
+  box-shadow: 10px 0 15px rgba(0, 12, 18, 0.2);
+  margin: 20px auto;
+  padding: 30px;
+}
+
+.account-sign {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-sign label {
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.account-sign label:active {
+  text-decoration: underline;
+}
+
+form input {
+  width: 100%;
+  border: none;
+  border-bottom: 0.25px solid rgb(117, 117, 117, 0.3);
+  outline: none;
+  margin: 15px 0;
+}
+
+form input:focus {
+  border-bottom: 0.25px solid rgb(117, 117, 117, 0.3);
+}
+
+.btn-tour {
+  width: 100%;
+  height: 56px;
+  background-color: #ED1B35;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-tour:hover {
+  background-color:#0095dc;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 149, 220, 0.6);
+}
+
+.account-signup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-signup label {
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.account-signup label:active {
+  text-decoration: underline;
+}
+
+.account-signup form input {
+  width: 100%;
+  border: none;
+  border-bottom: 0.25px solid rgb(117, 117, 117, 0.3);
+  outline: none;
+  margin: 15px 0;
+}
+
+.account-signup form input:focus {
+  border-bottom: 0.25px solid rgb(117, 117, 117, 0.3);
+}
+
+.btn-tour {
+  width: 100%;
+  height: 56px;
+  background-color: #ED1B35;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-tour:hover {
+  background-color:#0095dc;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 149, 220, 0.6);
+}
+
+.my-account {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.sibebar-content {
+background-color: #FFFFFF;
+padding: 20px;
+gap: 10px;
+}
+
+.sibebar-content .person-info {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sibebar-content .person-info:hover {
+  background-color: #013879;
+  border-radius: 5px;
+}
+
+.sibebar-content .person-info i {
+  align-self: center;
+}
+
+.sibebar-content .person-info i, .sibebar-content .person-info p {
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.sibebar-content .person-info:hover i,
+.sibebar-content .person-info:hover p {
+  color: white;
+}
+
+.infomation-general {
+  background-color: white;
+  padding: 20px;
+}
+
+.infomation-general h2 {
+  color: #013879;
+  margin-bottom: 20px;
+}
+
+.row-all {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.general-info p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.general-info input[type="text"],
+.general-info input[type="number"],
+.general-info input[type="email"]
+ {
+  width: 100%;
+  height: 35px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  outline: none;
+  padding: 5px;
+  border: 0.5px solid #7e7c7c;
+  border-radius: 5px;
+}
+
+.general-info .birthday {
+display: flex;
+gap: 5px;
+}
+
+.btn-save {
+border: none;
+margin-top: 10px;
+background-color: #ED1B35;
+padding: 10px;
+cursor: pointer;
+color: white;
+transition: background-color 0.3s ease;
+}
+
+.btn-save:hover {
+background-color: #013879;
+}
+
+footer {
+  background-color: #013879;
+  color: white;
+  padding: 10px 0;
+  margin-top: 3rem;
+}
+
+footer .footer-content {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 3rem;
+  background-color: #013879;
+}
+
+footer p {
+  color: white;
+}
+
+.inDam {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Xác Nhận Booking</title>
+    <link rel="stylesheet" href="style-product.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <img
+            src="https://www.luavietours.com/assets/img/common/logo.jpg"
+            alt="Logo Lửa Việt"
+          />
+          <nav>
+          <a href="home.html">Trang Chủ</a>
+            <a href="#">Giới Thiệu</a>
+            <a href="product-category.html">Tour Du Lịch</a>
+            <a href="#">Tin Tức</a>
+            <a href="#">Liên Hệ</a>
+            <a href="login.html" id="login">Đăng Nhập</a>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          </nav>
+          <div>
+            <select>
+              <option value="vi">Tiếng Việt</option>
+              <option value="en">Tiếng Anh</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+  <div class="success-message" style="text-align:center; margin-bottom:20px;">
+    <i class="fa-solid fa-circle-check" style="color: green; font-size: 2.5rem;"></i>
+    <h2>Đặt Tour Thành Công!</h2>
+    <p>Cảm ơn bạn, chúng tôi đã nhận được yêu cầu đặt tour của bạn.</p>
+  </div>
+
+  <div class="booking-summary" style="border:1px solid #ddd; border-radius:8px; padding:20px; background:#f9f9f9;">
+    <div id="show-cart"> </div>
+    
+    <div class="row total">
+      <span>Tổng cộng:</span>
+      <span style="color: red; font-weight:650; font-size:1.2rem;" id="last-total">5.400.000 VNĐ</span>
+    </div>
+  </div>
+
+  <div class="action-buttons" style="margin-top:20px; text-align:center;">
+    <a href="product-category.html" class="btn-tour" style="padding:10px 20px; background:#007bff; color:#fff; border-radius:5px; text-decoration:none;">
+      Tiếp tục xem tour
+    </a>
+  </div>
+</div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <p class="inDam">LỬA VIỆT - CÔNG TY DU LỊCH THẾ GIỚI</p>
+            <br />
+            <p>
+              Chạm Nha Trang tự hào là đơn vị cung cấp dịch vụ du lịch uy tín trên thế giới năm 2025.
+            </p>
+            <br />
+            <p>Địa chỉ: 295 Đường 2/4, Bắc Nha Trang, Nha Trang, Khánh Hòa</p>
+          </div>
+          <div>
+            <p class="inDam">Về Chúng Tôi</p>
+            <br />
+            <p>Giới thiệu công ty</p>
+            <p>Tuyển dụng</p>
+            <p>Điều khoản sử dụng</p>
+            <p>Chính sách bảo mật</p>
+          </div>
+          <div>
+            <p class="inDam">Thông tin thêm</p>
+            <br />
+            <p>Hướng dẫn đặt tour</p>
+            <p>Quy định hủy tour</p>
+            <p>Đặt tour & thanh toán</p>
+            <p>Kinh nghiệm du lịch</p>
+          </div>
+          <div>
+            <p class="inDam">Chăm sóc khách hàng</p>
+            <br />
+            <p><i class="fa-solid fa-envelope"></i> sales@luaviet.com</p>
+            <p><i class="fa-solid fa-phone"></i> 079 369 1709</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="confirm-booking.js"></script>
+  </body>
+</html>
