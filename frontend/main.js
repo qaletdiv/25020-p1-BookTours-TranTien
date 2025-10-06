@@ -100,12 +100,40 @@ function showSlides(n) {
 }
 
 //pop up
- const popup = document.getElementById("popupForm");
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("popupForm");
   const openBtn = document.getElementById("openPopup");
   const closeBtn = document.getElementById("closePopup");
 
-  openBtn.onclick = () => popup.style.display = "block";
-  closeBtn.onclick = () => popup.style.display = "none";
-  window.onclick = (e) => {
-    if (e.target == popup) popup.style.display = "none";
+  if (!popup) {
+    console.error("Không tìm thấy #popupForm trong HTML!");
+    return;
   }
+
+  function showPopup() {
+    popup.style.display = "flex"; 
+    popup.classList.add("visible");
+  }
+
+  function hidePopup() {
+    popup.classList.remove("visible");
+    const TRANSITION_MS = 200;
+    setTimeout(() => {
+      if (!popup.classList.contains("visible")) {
+        popup.style.display = "none";
+      }
+    }, TRANSITION_MS);
+  }
+
+  if (openBtn) openBtn.addEventListener("click", showPopup);
+  if (closeBtn) closeBtn.addEventListener("click", hidePopup);
+
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) hidePopup();
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hidePopup();
+  });
+  showPopup();
+});
