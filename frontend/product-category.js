@@ -1,8 +1,9 @@
-const user = JSON.parse(localStorage.getItem("User")); //Ghi nhớ trạng thái đăng nhập, hiện trên trang chủ
+const user = JSON.parse(localStorage.getItem("User")) || []; //Ghi nhớ trạng thái đăng nhập, hiện trên trang chủ, JSON.parse dùng để chuyển chuỗi JSON thành object
 console.log(user);
 if (user.length !== 0) {
   const login = document.querySelector("#login");
   login.textContent = user[0].email;
+  login.setAttribute('href','myaccount.html')
 }
 
 async function layData(api) {
