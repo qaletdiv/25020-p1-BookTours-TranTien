@@ -15,6 +15,92 @@ body {
   padding: 10px;
 }
 
+.tour-filter {
+  padding: 1cm 0;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.tour-filter h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+}
+
+.filter-item label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.filter-item input,
+.filter-item select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.cart-wrapper {
+  position: relative; /* đây là key quan trọng để badge bám theo icon */
+  display: inline-block;
+}
+
+#cart-icon {
+  color: #003366;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  top: -6px; /* chỉnh vị trí dọc */
+  right: -10px; /* chỉnh vị trí ngang */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
+
+.btn-search {
+  display: block;
+  margin: 15px auto 0;
+  padding: 10px 25px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-search:hover {
+  background: #d62828;
+}
+
+
 header {
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
 }

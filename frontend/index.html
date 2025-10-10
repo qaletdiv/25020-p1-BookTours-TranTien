@@ -19,7 +19,6 @@
     />
   </head>
   <body>
-    <input type="date" name="" id="">
     <header>
       <div class="container">
         <div class="header-content">
@@ -29,12 +28,17 @@
           />
           <div id="toggle" style="order: 4"><i class="fas fa-bars"></i></div>
           <nav>
-          <a href="home.html">Trang Chủ</a>
-            <a href="#">Giới Thiệu</a>
+          <a href="index.html">Trang Chủ</a>
             <a href="product-category.html">Tour Du Lịch</a>
             <a href="#">Tin Tức</a>
+            <a href="#">Liên Hệ</a>
             <a href="login.html" id="login">Đăng Nhập</a>
-            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+    <div class="cart-wrapper">
+  <a href="cart.html" id="cart-icon">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cart-count">0</span>
+  </a>
+</div>
           </nav>
         </div>
       </div>
@@ -63,6 +67,61 @@
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
     </section>
+    
+<!-- Bộ lọc tìm tour -->
+<section class="tour-filter">
+  <div class="container">
+    <h2>Tìm kiếm tour nhanh</h2>
+    <form id="tourFilterForm">
+      <div class="filter-group">
+        <div class="filter-item">
+          <label for="destination">Điểm đến</label>
+          <input
+            type="text"
+            id="destination"
+            list="destinationSuggestions"
+            placeholder="Nhập điểm đến..."
+          />
+          <datalist id="destinationSuggestions">
+            <option value="Nha Trang"></option>
+            <option value="Đà Nẵng"></option>
+            <option value="Phú Quốc"></option>
+            <option value="Hạ Long"></option>
+            <option value="Sapa"></option>
+            <option value="Hàn Quốc"></option>
+            <option value="Nhật Bản"></option>
+            <option value="Singapore"></option>
+          </datalist>
+        </div>
+
+        <div class="filter-item">
+          <label for="departure">Điểm khởi hành</label>
+          <select id="departure">
+            <option value="">Tất cả</option>
+            <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+            <option value="Hà Nội">Hà Nội</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="startDate">Ngày đi</label>
+          <input type="date" id="startDate" />
+        </div>
+
+        <div class="filter-item">
+          <label for="durationRange">Số ngày</label>
+          <select id="durationRange">
+            <option value="">Tất cả</option>
+            <option value="1-3 ngày">1-3 ngày</option>
+            <option value="4-7 ngày">4-7 ngày</option>
+            <option value="8-14 ngày">8-14 ngày</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn-search">Tìm kiếm</button>
+    </form>
+  </div>
+</section>
     <main>
       <div class="container">
         <div class="main-content">

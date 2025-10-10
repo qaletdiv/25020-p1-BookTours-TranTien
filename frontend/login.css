@@ -58,6 +58,37 @@ form {
   padding: 30px;
 }
 
+.cart-wrapper {
+  position: relative; /* đây là key quan trọng để badge bám theo icon */
+  display: inline-block;
+}
+
+
+#cart-icon {
+  color: #003366;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+
+#cart-count {
+  position: absolute;
+  top: -6px; /* chỉnh vị trí dọc */
+  right: -10px; /* chỉnh vị trí ngang */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
 .account-sign {
   display: flex;
   justify-content: space-between;
@@ -72,7 +103,7 @@ form {
 }
 
 .account-sign label:active {
-  text-decoration: underline;
+  text-decoration: none ;
 }
 
 form input {
@@ -122,7 +153,7 @@ form input:focus {
 }
 
 .account-signup label:active {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .account-signup form input {

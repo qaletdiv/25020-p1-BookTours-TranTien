@@ -13,6 +13,39 @@ body {
   line-height: 1.5;
 }
 
+.cart-wrapper {
+  position: relative; /* đây là key quan trọng để badge bám theo icon */
+  display: inline-block;
+}
+
+
+#cart-icon {
+  color: #003366;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+
+#cart-count {
+  position: absolute;
+  top: -6px; /* chỉnh vị trí dọc */
+  right: -10px; /* chỉnh vị trí ngang */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
+
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -209,6 +242,14 @@ header .header-content {
 .cart-table .product {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.cart-table .product a {
+  display: flex;
+  align-items: center; /* Giúp hình + text trong link nằm giữa */
+  text-decoration: none;
+  color: inherit;
   gap: 10px;
 }
 

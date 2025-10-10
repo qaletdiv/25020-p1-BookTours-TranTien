@@ -1,12 +1,17 @@
 const user = JSON.parse(localStorage.getItem("User")) || []; //Ghi nhớ trạng thái đăng nhập, hiện trên trang chủ, JSON.parse dùng để chuyển chuỗi JSON thành object
 console.log(user);
-if (user.length !== 0) {
+
+// 🧠 Kiểm tra đăng nhập
+if (user.length === 0) {
+  alert("⚠️ Vui lòng đăng nhập để tiếp tục thanh toán!");
+  window.location.href = "login.html"; // Chuyển hướng về trang đăng nhập
+} else {
   const login = document.querySelector("#login");
-  login.textContent = user[0].email;
-  login.setAttribute('href','myaccount.html')
+  login.innerHTML = '<i class="fa-solid fa-circle-user"></i> Tài Khoản Tôi';
+  login.setAttribute("href", "myaccount.html");
 }
-// const user = JSON.parse(localStorage.getItem("User")) || [];
-// console.log(user);
+
+
 const idUser = user[0].id;
 const nameuser = document.getElementById("name");
 const phone = document.getElementById("phone");
@@ -114,5 +119,28 @@ booking.addEventListener("click", async (event) => {
     console.error("Lỗi", error);
   }
 });
-//C1: Lưu newOrder vào Localstorage -> Show ra trên confirm booking
-//C2: http://localhost:3000/order?idUserBought=11&_sort=id&_order=desc -> Show ra phần tử đầu tiên của mảng
+
+const updateCartCount = () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById("cart-count").textContent = total;
+};
+
+
+// Gọi hàm khi trang load
+updateCartCount();
+
+
+const addToCart = (product) => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let item = cart.find((p) => p.id === product.id);
+  if (!item) {
+    cart.push({ ...product, quantity: 1 });
+    alert("🛒 Đặt hàng thành công!");
+  } else {
+    item.quantity++;
+    alert("🛒 Tăng số lượng sản phẩm trong giỏ!");
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount(); // 🟢 Cập nhật số lượng trên icon
+};

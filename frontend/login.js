@@ -24,7 +24,7 @@ try {
     };
     messageError.textContent = "Đăng nhập thành công";
     localStorage.setItem("User", JSON.stringify(data)); // Thêm dữ liệu mới vào localStorage để lưu thông tin người dùng. Lần sau mở lại web, vẫn biết user nào đang đăng nhập, không cần đăng nhập lại ngay.
-    window.location.href = "home.html"
+    window.location.href = "index.html"
   } catch (error) {
     console.error("Lỗi dữ liệu ", error);
   }

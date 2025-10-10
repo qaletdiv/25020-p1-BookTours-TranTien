@@ -13,6 +13,93 @@ body {
   line-height: 1.5;
 }
 
+/* --- Bộ lọc tour --- */
+.filter {
+  /* background-color: #f9f9f9; */
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  padding: 10px;
+  height: fit-content;
+}
+
+.filter h3 {
+  font-size: 1.2rem;
+  color: #013879;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.filter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter label {
+  font-weight: 600;
+  color: #013879;
+  margin-top: 10px;
+}
+
+.filter input,
+.filter select {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.filter input:focus,
+.filter select:focus {
+  border-color: #013879;
+  box-shadow: 0 0 5px rgba(1, 56, 121, 0.3);
+}
+
+.filter button {
+  background-color: #013879;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter button:hover {
+  background-color: #0355b3;
+}
+
+.cart-wrapper {
+  position: relative; /* đây là key quan trọng để badge bám theo icon */
+  display: inline-block;
+}
+
+#cart-icon {
+  color: #003366;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  top: -6px; /* chỉnh vị trí dọc */
+  right: -10px; /* chỉnh vị trí ngang */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+
 .container {
   max-width: 1200px;
   margin: 0 auto;

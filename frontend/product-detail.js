@@ -2,7 +2,7 @@ const user = JSON.parse(localStorage.getItem("User")) || []; //Ghi nhớ trạng
 console.log(user);
 if (user.length !== 0) {
   const login = document.querySelector("#login");
-  login.textContent = user[0].email;
+  login.innerHTML = '<i class="fa-solid fa-circle-user"></i> Tài Khoản Tôi';
   login.setAttribute('href','myaccount.html')
 }
 const url = new URL(window.location.href); //lấy toàn bộ đường dẫn và phân tích
@@ -160,4 +160,32 @@ const addToCart = (product) => { //Ta có hàm từ onclick truyền vào là {i
     item.quantity++; //nếu có rồi thì thêm 1
   }
   localStorage.setItem("cart", JSON.stringify(cart));
+   alert("🎉 Đặt hàng thành công! Sản phẩm đã được thêm vào giỏ hàng.");
 };
+
+const updateCartCount = () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById("cart-count").textContent = total;
+};
+
+
+// Gọi hàm khi trang load
+updateCartCount();
+
+
+const addCart = (product) => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let item = cart.find((p) => p.id === product.id);
+  if (!item) {
+    cart.push({ ...product, quantity: 1 });
+    alert("🛒 Đặt hàng thành công!");
+  } else {
+    item.quantity++;
+    alert("🛒 Tăng số lượng sản phẩm trong giỏ!");
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount(); // 🟢 Cập nhật số lượng trên icon
+};
+
+
