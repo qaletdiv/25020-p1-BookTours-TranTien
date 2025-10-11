@@ -437,6 +437,7 @@ footer p {
     .row-all {
         grid-template-columns: 1fr; /* Chuyển các trường input thành 1 cột */
         gap: 0;
+        padding: 20px;
     }
 
     .general-info input, .general-info .birthday {
@@ -489,6 +490,7 @@ footer p {
     .row-all {
         grid-template-columns: repeat(2, 1fr); /* Giữ 2 cột */
         gap: 15px;
+        padding: 20px;
     }
 
     /* Footer */

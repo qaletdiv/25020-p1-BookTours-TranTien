@@ -1,246 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="popup.css">
     <link
-      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet"
     />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
     />
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <div class="container">
-        <div class="header-content">
-          <img
-            src="https://www.luavietours.com/assets/img/common/logo.jpg"
-            alt=""
-          />
-          <div id="toggle" style="order: 4"><i class="fas fa-bars"></i></div>
-          <nav>
-          <a href="index.html">Trang Chủ</a>
-            <a href="product-category.html">Tour Du Lịch</a>
-            <a href="#">Tin Tức</a>
-            <a href="#">Liên Hệ</a>
-            <a href="login.html" id="login">Đăng Nhập</a>
-    <div class="cart-wrapper">
-  <a href="cart.html" id="cart-icon">
-    <i class="fa-solid fa-cart-shopping"></i>
-    <span id="cart-count">0</span>
-  </a>
-</div>
-          </nav>
+        <div class="container">
+            <div class="header-content">
+                <img
+                    src="https://www.luavietours.com/assets/img/common/logo.jpg"
+                    alt=""
+                />
+                <div id="toggle" style="order: 4"><i class="fas fa-bars"></i></div>
+                <nav>
+                    <a href="index.html">Trang Chủ</a>
+                    <a href="product-category.html">Tour Du Lịch</a>
+                    <a href="#">Tin Tức</a>
+                    <a href="#">Liên Hệ</a>
+                    <a href="login.html" id="login">Đăng Nhập</a>
+                    <div class="cart-wrapper">
+                        <a href="cart.html" id="cart-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="cart-count">0</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
         </div>
-      </div>
     </header>
     <section class="banner">
-<div class="mySlides fade">
-  <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/thansksbanner-website-pc.png" style="width:100%">
-</div>
+        <div class="mySlides fade">
+            <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/thansksbanner-website-pc.png" style="width:100%">
+        </div>
 
-<div class="mySlides fade">
-  <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/BANNER-NHAT-BAN-WEB.png" style="width:100%">
-</div>
+        <div class="mySlides fade">
+            <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/BANNER-NHAT-BAN-WEB.png" style="width:100%">
+        </div>
 
-<div class="mySlides fade">
-  <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/BANNER-WEBSITE-HAN-QUOC-pc-2048x545.png" style="width:100%">
-</div>
+        <div class="mySlides fade">
+            <img src="https://www.luavietours.com/wp/wp-content/uploads/2025/08/BANNER-WEBSITE-HAN-QUOC-pc-2048x545.png" style="width:100%">
+        </div>
 
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
 
-<br>
+        <br>
 
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
     </section>
-    
-<!-- Bộ lọc tìm tour -->
-<section class="tour-filter">
-  <div class="container">
-    <h2>Tìm kiếm tour nhanh</h2>
-    <form id="tourFilterForm">
-      <div class="filter-group">
-        <div class="filter-item">
-          <label for="destination">Điểm đến</label>
-          <input
-            type="text"
-            id="destination"
-            list="destinationSuggestions"
-            placeholder="Nhập điểm đến..."
-          />
-          <datalist id="destinationSuggestions">
-            <option value="Nha Trang"></option>
-            <option value="Đà Nẵng"></option>
-            <option value="Phú Quốc"></option>
-            <option value="Hạ Long"></option>
-            <option value="Sapa"></option>
-            <option value="Hàn Quốc"></option>
-            <option value="Nhật Bản"></option>
-            <option value="Singapore"></option>
-          </datalist>
-        </div>
 
-        <div class="filter-item">
-          <label for="departure">Điểm khởi hành</label>
-          <select id="departure">
-            <option value="">Tất cả</option>
-            <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
-            <option value="Hà Nội">Hà Nội</option>
-          </select>
-        </div>
+    <section class="tour-filter">
+        <div class="container">
+            <h2>Tìm kiếm tour nhanh</h2>
+            <form id="tourFilterForm">
+                <div class="filter-group">
+                    <div class="filter-item">
+                        <label for="destination">Điểm đến</label>
+                        <input
+                            type="text"
+                            id="destination"
+                            list="destinationSuggestions"
+                            placeholder="Nhập điểm đến..."
+                        />
+                        <datalist id="destinationSuggestions">
+                            <option value="Nha Trang"></option>
+                            <option value="Đà Nẵng"></option>
+                            <option value="Phú Quốc"></option>
+                            <option value="Hạ Long"></option>
+                            <option value="Sapa"></option>
+                            <option value="Hàn Quốc"></option>
+                            <option value="Nhật Bản"></option>
+                            <option value="Singapore"></option>
+                        </datalist>
+                    </div>
 
-        <div class="filter-item">
-          <label for="startDate">Ngày đi</label>
-          <input type="date" id="startDate" />
-        </div>
+                    <div class="filter-item">
+                        <label for="departure">Điểm khởi hành</label>
+                        <select id="departure">
+                            <option value="">Tất cả</option>
+                            <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                        </select>
+                    </div>
 
-        <div class="filter-item">
-          <label for="durationRange">Số ngày</label>
-          <select id="durationRange">
-            <option value="">Tất cả</option>
-            <option value="1-3 ngày">1-3 ngày</option>
-            <option value="4-7 ngày">4-7 ngày</option>
-            <option value="8-14 ngày">8-14 ngày</option>
-          </select>
+                    <div class="filter-item">
+                        <label for="startDate">Ngày đi</label>
+                        <input type="date" id="startDate" />
+                    </div>
+
+                    <div class="filter-item">
+                        <label for="durationRange">Số ngày</label>
+                        <select id="durationRange">
+                            <option value="">Tất cả</option>
+                            <option value="1-3 ngày">1-3 ngày</option>
+                            <option value="4-7 ngày">4-7 ngày</option>
+                            <option value="8-14 ngày">8-14 ngày</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn-search">Tìm kiếm</button>
+            </form>
         </div>
-      </div>
-      <button type="submit" class="btn-search">Tìm kiếm</button>
-    </form>
-  </div>
-</section>
+    </section>
     <main>
-      <div class="container">
-        <div class="main-content">
-         
-          <section class="tourNoiBat">
-            <h2>Tour Nổi Bật</h2>
-            <div class="tours" id="tour-noi-bat">
+        <div class="container">
+            <div class="main-content">
+
+                <section class="tourNoiBat">
+                    <h2>Tour Nổi Bật</h2>
+                    <div class="tours" id="tour-noi-bat">
+                    </div>
+                    <h2>Tour Trong Nước</h2>
+                    <div class="tours" id="tour-trong-nuoc">
+                    </div>
+                    <h2>Tour Ngoài Nước</h2>
+                    <div class="tours" id="tour-ngoai-nuoc">
+                    </div>
+                    <button class="btn-tour" id="openPopup">Đăng ký tư vấn</button>
+                </section>
+                <section class="favoriteTour">
+                    <h2>Điểm Đến Yêu Thích</h2>
+                    <div class="favoriteImg">
+                        <div class="img1">
+                            <img
+                                src="https://www.luavietours.com/wp/wp-content/uploads/2024/12/canh-dong-hoa-tulip-ha-lan.jpg"
+                                alt=""
+                            />
+                            <div class="overlay">
+                                <span>✈ Châu Âu</span>
+                            </div>
+                        </div>
+                        <div class="img234">
+                            <div class="img23">
+                                <div class="img2">
+                                    <img
+                                        src="https://vcdn1-vnexpress.vnecdn.net/2019/07/26/b6ea84179668f1383bce034fadcf6b-1187-4815-1564136197.png?w=500&h=300&q=100&dpr=1&fit=crop&s=BFMOwFDeLSmU3T42bS3EFQ"
+                                        alt=""
+                                    />
+                                </div>
+                                <img
+                                    src="https://www.tamtravel.com.vn/sites/default/files/styles/size_one/public/thap-nam-san-seoul_0.jpg?itok=mzC93lcL"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="img4">
+                                <img
+                                    src="https://cdn2.ivivu.com/2024/02/22/17/ivivu-lau-dai-osaka-mua-he-nhat-ban-750x460.jpg"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <h2>Tour Trong Nước</h2>
-            <div class="tours" id="tour-trong-nuoc">
-            </div>
-            <h2>Tour Ngoài Nước</h2>
-            <div class="tours" id="tour-ngoai-nuoc">
-            </div>
-            <!-- Nút mở popup -->
-            <button class="btn-tour" id="openPopup">Đăng ký tư vấn</button>
-          </section>
-          <section class="favoriteTour">
-            <h2>Điểm Đến Yêu Thích</h2>
-            <div class="favoriteImg">
-              <div class="img1">
-                <img
-                  src="https://www.luavietours.com/wp/wp-content/uploads/2024/12/canh-dong-hoa-tulip-ha-lan.jpg"
-                  alt=""
-                />
-                <div class="overlay">
-                  <span>✈ Châu Âu</span>
-                </div>
-              </div>
-              <div class="img234">
-                <div class="img23">
-                  <div class="img2">
-                    <img
-                      src="https://vcdn1-vnexpress.vnecdn.net/2019/07/26/b6ea84179668f1383bce034fadcf6b-1187-4815-1564136197.png?w=500&h=300&q=100&dpr=1&fit=crop&s=BFMOwFDeLSmU3T42bS3EFQ"
-                      alt=""
-                    />
-                  </div>
-                  <img
-                    src="https://www.tamtravel.com.vn/sites/default/files/styles/size_one/public/thap-nam-san-seoul_0.jpg?itok=mzC93lcL"
-                    alt=""
-                  />
-                </div>
-                <div class="img4">
-                  <img
-                    src="https://cdn2.ivivu.com/2024/02/22/17/ivivu-lau-dai-osaka-mua-he-nhat-ban-750x460.jpg"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
         </div>
-      </div>
     </main>
     <footer class="site-footer">
-      <div class="container">
-        <div class="footer-content">
-            <div>
-        <p class="inDam">LỬA VIỆT - CÔNG TY DU LỊCH THẾ GIỚI</p>
-        <br>
-        <p>Chạm Nha Trang tự hào là đơn vị cung cấp dịch vụ du lịch uy tín trên thế giới năm 2025.</p>
-        <br>
-        <p>Địa chỉ: 295 Đường 2/4, Bắc Nha Trang, Nha Trang, Khánh Hòa</p>
-      </div>
-            <div>
-        <p class="inDam">Về Chúng Tôi</p>
-        <br>
-        <p>Giới thiệu công ty</p>
-        <p>Tuyển dụng</p>
-        <p>Điều khoản sử dụng</p>
-        <p>Chính sách bảo mật</p>
-      </div>
-            <div> 
-        <p class="inDam">Thông tin thêm</p>
-        <br>
-        <p>Hướng dẫn đặt tour</p>
-        <p>Quy định hủy tour</p>
-        <p>Đặt tour & thanh toán</p>
-        <p>Kinh nghiệm du lịch</p>
-      </div>
-            <div>
-        <p class="inDam">Chăm sóc khách hàng</p>
-        <br>
-        <p><i class="fa-solid fa-envelope"></i> sales@luaviet.com</p>
-        <p><i class="fa-solid fa-phone"> </i> 079 369 1709</p>        
-      </div>
-      </div>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <p class="inDam">LỬA VIỆT - CÔNG TY DU LỊCH THẾ GIỚI</p>
+                    <br>
+                    <p>Chạm Nha Trang tự hào là đơn vị cung cấp dịch vụ du lịch uy tín trên thế giới năm 2025.</p>
+                    <br>
+                    <p>Địa chỉ: 295 Đường 2/4, Bắc Nha Trang, Nha Trang, Khánh Hòa</p>
+                </div>
+                <div>
+                    <p class="inDam">Về Chúng Tôi</p>
+                    <br>
+                    <p>Giới thiệu công ty</p>
+                    <p>Tuyển dụng</p>
+                    <p>Điều khoản sử dụng</p>
+                    <p>Chính sách bảo mật</p>
+                </div>
+                <div> 
+                    <p class="inDam">Thông tin thêm</p>
+                    <br>
+                    <p>Hướng dẫn đặt tour</p>
+                    <p>Quy định hủy tour</p>
+                    <p>Đặt tour & thanh toán</p>
+                    <p>Kinh nghiệm du lịch</p>
+                </div>
+                <div>
+                    <p class="inDam">Chăm sóc khách hàng</p>
+                    <br>
+                    <p><i class="fa-solid fa-envelope"></i> sales@luaviet.com</p>
+                    <p><i class="fa-solid fa-phone"> </i> 079 369 1709</p> 		
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-<!-- Popup -->
-<div id="popupForm" class="popup">
-  <div class="popup-content">
-    <span id="closePopup" class="close">&times;</span>
-    <!-- Form copy từ popup.html -->
-    <div class="form-container otp-u">
-      <h2>Đăng Ký Liên Hệ</h2>
-      <p>Vui lòng điền form dưới đây và gửi cho chúng tôi</p>
-      <form action="#" method="post">
-        <label for="name">Tên khách hàng <span class="required">*</span></label>
-        <input type="text" id="name" name="name" required>
-        <label for="phone">Điện thoại <span class="required">*</span></label>
-        <input type="text" id="phone" name="phone" required>
-        <label for="email">Email <span class="required">*</span></label>
-        <input type="email" id="email" name="email" required>
-        <label for="service">Tour quan tâm</label>
-        <select id="service" name="service">
-          <option value="">Vui lòng chọn</option>
-          <option value="domestic">Tour trong nước</option>
-          <option value="foreign">Tour ngoài nước</option>
-        </select>
-        <label for="message">Mô tả</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-        <button type="submit">Gửi yêu cầu tư vấn</button>
-      </form>
+    <div id="popupForm" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <div class="form-container otp-u">
+                <h2>Đăng Ký Liên Hệ</h2>
+                <p>Vui lòng điền form dưới đây và gửi cho chúng tôi</p>
+                <form action="#" method="post">
+                    <label for="name">Tên khách hàng <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="phone">Điện thoại <span class="required">*</span></label>
+                    <input type="text" id="phone" name="phone" required>
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="service">Tour quan tâm</label>
+                    <select id="service" name="service">
+                        <option value="">Vui lòng chọn</option>
+                        <option value="domestic">Tour trong nước</option>
+                        <option value="foreign">Tour ngoài nước</option>
+                    </select>
+                    <label for="message">Mô tả</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    <button type="submit">Gửi yêu cầu tư vấn</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
     <script src="main.js"></script>
-  </body>
+</body>
 </html>
