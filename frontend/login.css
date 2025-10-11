@@ -65,7 +65,7 @@ form {
 }
 
 .cart-wrapper {
-  position: relative; /* đây là key quan trọng để badge bám theo icon */
+  position: relative;
   display: inline-block;
 }
 
@@ -80,8 +80,8 @@ form {
 
 #cart-count {
   position: absolute;
-  top: -6px; /* chỉnh vị trí dọc */
-  right: -10px; /* chỉnh vị trí ngang */
+  top: -6px; 
+  right: -10px; 
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -325,18 +325,18 @@ footer p {
 
   header nav {
     display: none;
-    flex-direction: column; /* để khi hiện ra thì menu dọc */
+    flex-direction: column; 
     gap: 20px;
     background: white;
     position: fixed;
     top: 50px;   
     left: 0;
     width: 100%;
-    height: 100vh;         /* full chiều cao màn hình */
+    height: 100vh;         
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     z-index: 999;
-    overflow-y: auto;      /* nếu menu dài thì cho scroll */
+    overflow-y: auto;      
     align-items: center;
   }
 
@@ -345,7 +345,6 @@ footer p {
     font-weight:600;
   }
 
-  /* Khi header có class .active → show menu */
   header.active nav{
     display: flex;
   }
@@ -368,45 +367,41 @@ footer p {
 }
 
 @media screen and (max-width: 767px) {
-    /* ... các quy tắc đã có của bạn ... */
 
-    /* Trang Đăng nhập/Đăng ký */
     .main-content {
-        margin: 1.5rem auto; /* Giảm margin */
+        margin: 1.5rem auto; 
     }
 
     form {
-        width: 95%; /* Chiếm gần hết chiều rộng màn hình */
-        max-width: 400px; /* Giới hạn tối đa nếu màn hình quá lớn */
-        padding: 20px; /* Giảm padding */
+        width: 95%; 
+        max-width: 400px; 
+        padding: 20px;
         margin: 10px auto;
-        box-shadow: 0 5px 10px rgba(0, 12, 18, 0.1); /* Giảm shadow */
+        box-shadow: 0 5px 10px rgba(0, 12, 18, 0.1); 
     }
 
 
     .account-sign label, .account-signup label {
-        font-size: 1.2rem; /* Giảm kích thước chữ */
+        font-size: 1.2rem; 
         text-align: center;
         margin-bottom: 0.5rem;
     }
     
     .btn-tour {
-        height: 50px; /* Giảm chiều cao nút */
+        height: 50px; 
         font-size: 16px;
     }
 
-    /* Trang Tài khoản của tôi (My Account) */
     .my-account {
-        grid-template-columns: 1fr; /* Chuyển thành 1 cột duy nhất */
+        grid-template-columns: 1fr; 
         gap: 0;
     }
     
-    /* Sidebar trên Mobile */
     .sibebar-content {
         padding: 10px;
-        display: flex; /* Biến sidebar thành thanh ngang cuộn được */
+        display: flex; 
         flex-wrap: nowrap;
-        overflow-x: auto; /* Cho phép cuộn ngang */
+        overflow-x: auto; 
         -webkit-overflow-scrolling: touch;
         gap: 5px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -414,19 +409,18 @@ footer p {
     }
     
     .sibebar-content .person-info {
-        flex-shrink: 0; /* Ngăn các mục bị co lại */
+        flex-shrink: 0; 
         padding: 8px 12px;
         gap: 5px;
         border: 1px solid #eee;
     }
 
     .sibebar-content .person-info i, .sibebar-content .person-info p {
-        font-size: 14px; /* Giảm font chữ sidebar */
+        font-size: 14px; 
     }
     
-    /* Thông tin chung */
     .infomation-general {
-        padding: 15px 0; /* Giảm padding */
+        padding: 15px 0; 
     }
 
     .infomation-general h2 {
@@ -435,7 +429,7 @@ footer p {
     }
 
     .row-all {
-        grid-template-columns: 1fr; /* Chuyển các trường input thành 1 cột */
+        grid-template-columns: 1fr; 
         gap: 0;
         padding: 20px;
     }
@@ -445,7 +439,7 @@ footer p {
     }
     
     .general-info .birthday {
-        flex-direction: column; /* Xếp dọc các trường ngày/tháng/năm sinh */
+        flex-direction: column;
         gap: 10px;
     }
     
@@ -454,29 +448,25 @@ footer p {
         padding: 12px;
     }
     
-    /* Footer */
     footer .footer-content {
-        grid-template-columns: 1fr; /* 1 cột duy nhất */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 20px 10px;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-    /* Cấu hình chung */
     .container {
         max-width: 900px;
     }
 
-    /* Trang Đăng nhập/Đăng ký */
     form {
         width: 80%;
         max-width: 500px;
     }
 
-    /* Trang Tài khoản của tôi (My Account) */
     .my-account {
-        grid-template-columns: 25% 75%; /* Tăng nhẹ không gian cho sidebar */
+        grid-template-columns: 25% 75%; 
     }
     
     .sibebar-content {
@@ -488,14 +478,13 @@ footer p {
     }
     
     .row-all {
-        grid-template-columns: repeat(2, 1fr); /* Giữ 2 cột */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 15px;
         padding: 20px;
     }
 
-    /* Footer */
     footer .footer-content {
-        grid-template-columns: repeat(2, 1fr); /* 2 cột cho footer trên tablet */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 2rem;
     }
 }

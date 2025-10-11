@@ -39,7 +39,6 @@ const updateCartCount = () => {
   document.getElementById("cart-count").textContent = total;
 };
 
-// Gọi hàm khi trang load
 updateCartCount();
 
 const addToCart = (product) => {
@@ -53,7 +52,7 @@ const addToCart = (product) => {
     alert("🛒 Tăng số lượng sản phẩm trong giỏ!");
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount(); // 🟢 Cập nhật số lượng trên icon
+  updateCartCount(); 
 };
 
 const toggleBtn = document.getElementById("toggle");

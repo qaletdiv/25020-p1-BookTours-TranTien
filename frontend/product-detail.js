@@ -65,7 +65,6 @@ function renderSanPhamChiTiet(product) {
     return html;
   };
 
-  // Hàm helper để tạo HTML cho Chính sách (Policy)
   const renderPolicy = (policy) => {
     let html = '';
     if (policy) {
@@ -217,7 +216,6 @@ const updateCartCount = () => {
 };
 
 
-// Gọi hàm khi trang load
 updateCartCount();
 
 
@@ -232,7 +230,7 @@ const addCart = (product) => {
     alert("🛒 Tăng số lượng sản phẩm trong giỏ!");
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount(); // 🟢 Cập nhật số lượng trên icon
+  updateCartCount(); 
 };
 
 const toggleBtn = document.getElementById("toggle");

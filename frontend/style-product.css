@@ -14,7 +14,7 @@ body {
 }
 
 .cart-wrapper {
-  position: relative; /* đây là key quan trọng để badge bám theo icon */
+  position: relative;
   display: inline-block;
 }
 
@@ -29,8 +29,8 @@ body {
 
 #cart-count {
   position: absolute;
-  top: -6px; /* chỉnh vị trí dọc */
-  right: -10px; /* chỉnh vị trí ngang */
+  top: -6px; 
+  right: -10px; 
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -226,7 +226,7 @@ header a {
 
 .cart-table table {
   width: 100%;
-  border-collapse: collapse; /*Mặc định mỗi ô trong bảng có đường viền riêng. Các đường viền của ô liền kề gộp chung lại thành một đường duy nhất.*/
+  border-collapse: collapse; 
   text-align: center;
 }
 
@@ -251,7 +251,7 @@ header a {
 
 .cart-table .product a {
   display: flex;
-  align-items: center; /* Giúp hình + text trong link nằm giữa */
+  align-items: center; 
   text-decoration: none;
   color: inherit;
   gap: 10px;
@@ -436,18 +436,18 @@ footer p {
 
   header nav {
     display: none;
-    flex-direction: column; /* để khi hiện ra thì menu dọc */
+    flex-direction: column; 
     gap: 20px;
     background: white;
     position: fixed;
     top: 50px;   
     left: 0;
     width: 100%;
-    height: 100vh;         /* full chiều cao màn hình */
+    height: 100vh;         
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     z-index: 999;
-    overflow-y: auto;      /* nếu menu dài thì cho scroll */
+    overflow-y: auto;    
     align-items: center;
   }
 
@@ -456,7 +456,6 @@ footer p {
     font-weight:600;
   }
 
-  /* Khi header có class .active → show menu */
   header.active nav{
     display: flex;
   }
@@ -479,101 +478,91 @@ footer p {
 }
 
 @media screen and (max-width: 767px) {
-    /* ... các quy tắc đã có của bạn ... */
 
-    /* Điều chỉnh Typography cho màn hình nhỏ */
     html {
-        font-size: 14px; /* Giảm font-size cơ bản một chút */
+        font-size: 14px;
     }
 
-    /* Tiêu đề Tour */
     .tourName {
-        font-size: 1.5rem; /* Giảm kích thước tiêu đề */
+        font-size: 1.5rem;
     }
 
-    /* Header */
     header .header-content {
-        padding: 15px 10px; /* Giảm padding */
+        padding: 15px 10px; 
     }
 
-    /* Chi tiết Tour và Booking */
     .main-content .tour-name {
-        flex-direction: column; /* Xếp thông tin tour và nút booking/info xuống dòng */
+        flex-direction: column; 
         align-items: flex-start;
     }
 
     .main-content .info {
-        flex-direction: column; /* Xếp thông tin phụ (timing, id, startdes) xuống dòng */
+        flex-direction: column;
         align-items: flex-start;
         margin-top: 10px;
     }
     
     .btn-tour {
-        width: 100%; /* Nút đầy đủ chiều rộng */
+        width: 100%;
         height: 45px;
         font-size: 16px;
         margin-top: 10px;
     }
 
-    /* Layout ảnh Tour */
     .main-content .tour-image {
-        grid-template-columns: 1fr; /* Chỉ 1 cột ảnh lớn */
-        margin: 1.5rem 0; /* Giảm margin */
+        grid-template-columns: 1fr; 
+        margin: 1.5rem 0;
     }
     
     .tour-image img {
-        height: auto; /* Để chiều cao tự động theo tỷ lệ ảnh */
+        height: auto; 
     }
 
     .main-content .image-4 {
-        grid-template-columns: repeat(2, 1fr); /* Giữ 2 cột cho 4 ảnh nhỏ, nhưng giờ sẽ chiếm toàn bộ chiều rộng */
+        grid-template-columns: repeat(2, 1fr); 
         grid-template-rows: auto;
     }
 
     .image-4 img {
-        height: auto; /* Để chiều cao tự động theo tỷ lệ ảnh */
+        height: auto; 
     }
     
-    /* Layout Thông tin & Booking */
     .main-content .infomation-tour {
-        grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất */
+        grid-template-columns: 1fr; 
         gap: 20px;
     }
 
     .infomation-tour .general h2, .infomation-tour .general h3{
-        margin-top: 1rem; /* Thêm khoảng cách nếu cần */
+        margin-top: 1rem; 
     }
 
     .infomation-tour .booking {
-        box-shadow: 0 5px 10px rgba(0, 12, 18, 0.1); /* Giảm shadow cho gọn */
-        height: auto; /* Chiều cao tự động */
+        box-shadow: 0 5px 10px rgba(0, 12, 18, 0.1); 
+        height: auto;
         padding: 20px;
     }
     
-    /* Trang Giỏ hàng */
     .container .heading2 {
         margin: 1.5rem 0;
         font-size: 2rem;
     }
 
     .main-container-cart {
-        grid-template-columns: 1fr; /* Chỉ 1 cột */
+        grid-template-columns: 1fr; 
     }
     
-    /* Bảng giỏ hàng */
     .cart-table {
         margin: 10px auto;
-        overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
-        -webkit-overflow-scrolling: touch; /* Hỗ trợ cuộn mượt trên iOS */
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch;
     }
     
     .cart-table table {
-        /* Đảm bảo bảng có chiều rộng tối thiểu để nội dung không bị co lại quá mức */
         min-width: 650px; 
     }
     
     .cart-table .product {
-        flex-direction: column; /* Xếp ảnh và tiêu đề xuống dòng */
+        flex-direction: column; 
         align-items: flex-start;
         text-align: left;
     }
@@ -587,15 +576,13 @@ footer p {
         font-size: 0.9rem;
     }
 
-    /* Hộp tổng tiền */
     .cart-total-box {
         max-width: 100%;
         margin: 20px 0;
     }
     
-    /* Footer */
     footer .footer-content {
-        grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất */
+        grid-template-columns: 1fr; 
         gap: 1.5rem;
         padding: 20px 10px;
         text-align: center;
@@ -609,48 +596,42 @@ footer p {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Cấu hình chung */
     .container {
-        max-width: 900px; /* Giới hạn container phù hợp với tablet */
+        max-width: 900px;
     }
     
-    /* Header */
     header .header-content {
         padding: 20px 20px;
     }
 
     header nav {
-        gap: 1rem; /* Giảm khoảng cách giữa các mục menu */
+        gap: 1rem; 
     }
 
-    /* Layout ảnh Tour */
     .main-content .tour-image {
-        grid-template-columns: repeat(2, 1fr); /* Giữ 2 cột */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 10px;
     }
 
     .tour-image img {
-        height: 20rem; /* Giảm chiều cao ảnh */
+        height: 20rem; 
     }
 
     .image-4 img {
-        height: 9.95rem; /* Giảm chiều cao ảnh */
+        height: 9.95rem;
     }
 
-    /* Layout Thông tin & Booking */
     .main-content .infomation-tour {
-        grid-template-columns: 60% 35%; /* Giảm một chút cho cột thông tin và tăng cột booking */
+        grid-template-columns: 60% 35%; 
         gap: 5%;
     }
 
-    /* Trang Giỏ hàng */
     .main-container-cart {
-        grid-template-columns: 60% 40%; /* Thay đổi tỷ lệ một chút cho hợp lý */
+        grid-template-columns: 60% 40%; 
     }
     
-    /* Footer */
     footer .footer-content {
-        grid-template-columns: repeat(2, 1fr); /* 2 cột cho footer trên tablet */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 2rem;
     }
 }

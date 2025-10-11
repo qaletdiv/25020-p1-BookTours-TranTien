@@ -13,7 +13,6 @@ body {
   line-height: 1.5;
 }
 
-/* --- Bộ lọc tour --- */
 .filter {
   /* background-color: #f9f9f9; */
   /* border: 1px solid #ddd; */
@@ -72,7 +71,7 @@ body {
 }
 
 .cart-wrapper {
-  position: relative; /* đây là key quan trọng để badge bám theo icon */
+  position: relative; 
   display: inline-block;
 }
 
@@ -85,8 +84,8 @@ body {
 
 #cart-count {
   position: absolute;
-  top: -6px; /* chỉnh vị trí dọc */
-  right: -10px; /* chỉnh vị trí ngang */
+  top: -6px; 
+  right: -10px; 
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -259,18 +258,18 @@ footer p {
 
   header nav {
     display: none;
-    flex-direction: column; /* để khi hiện ra thì menu dọc */
+    flex-direction: column; 
     gap: 20px;
     background: white;
     position: fixed;
     top: 50px;   
     left: 0;
     width: 100%;
-    height: 100vh;         /* full chiều cao màn hình */
+    height: 100vh;       
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     z-index: 999;
-    overflow-y: auto;      /* nếu menu dài thì cho scroll */
+    overflow-y: auto;      
     align-items: center;
   }
 
@@ -279,7 +278,6 @@ footer p {
     font-weight:600;
   }
 
-  /* Khi header có class .active → show menu */
   header.active nav{
     display: flex;
   }
@@ -301,14 +299,12 @@ footer p {
   }
 }
 
-/* --- Desktop (>=1024px) --- */
 main .main-content {
   display: grid;
   grid-template-columns: 20% 80%;
   gap: 1.5rem;
 }
 
-/* --- Tablet (768px–1023px) --- */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   main .main-content {
     display: grid;
@@ -321,21 +317,18 @@ main .main-content {
   }
 }
 
-/* --- Mobile (<768px) --- */
 @media screen and (max-width: 767px) {
   main .main-content {
     display: flex;
     flex-direction: column;
   }
 
-  /* Bộ lọc chuyển lên đầu */
   .filter {
     order: -1;
     width: 100%;
     margin-bottom: 1rem;
   }
 
-  /* Sắp xếp lại tour: 1 cột */
   .main-content .products {
     grid-template-columns: 1fr;
   }
@@ -350,7 +343,6 @@ main .main-content {
     margin: 2rem 0 1rem;
   }
 
-  /* Điều chỉnh font cho dễ đọc hơn */
   .tourName {
     font-size: 1.1rem;
   }
@@ -359,7 +351,6 @@ main .main-content {
     font-size: 0.85rem;
   }
 
-  /* Khoảng cách và padding nhẹ hơn */
   .filter {
     padding: 8px;
   }
@@ -376,7 +367,6 @@ main .main-content {
   }
 }
 
-/* ---- Mobile (<768px) ---- */
 @media screen and (max-width: 767px) {
   footer {
     padding: 25px 15px;

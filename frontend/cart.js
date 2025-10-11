@@ -1,4 +1,3 @@
-// --- Kiểm tra user đăng nhập ---
 const user = JSON.parse(localStorage.getItem("User")) || [];
 if (user.length !== 0) {
   const login = document.querySelector("#login");
@@ -6,27 +5,22 @@ if (user.length !== 0) {
   login.setAttribute("href", "myaccount.html");
 }
 
-// --- Lấy giỏ hàng từ localStorage ---
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 const cartTable = document.getElementById("main-container-cart");
 
-// --- Hàm render giỏ hàng ---
 function renderCart(cart) {
   const listDiv = document.getElementById("show-cart");
   const firstTotal = document.getElementById("first-total");
   const lastTotal = document.getElementById("last-total");
 
-  // Tính tổng giá trị
-  let total = cart.reduce(
+let total = cart.reduce(
     (sum, product) => sum + product.price * product.quantity,
     0
   );
 
-  // Hiển thị tổng tiền
   firstTotal.textContent = total.toLocaleString("vi-VN");
   lastTotal.textContent = (total * 0.9).toLocaleString("vi-VN");
 
-  // Hiển thị danh sách sản phẩm
   listDiv.innerHTML = cart
     .map(
       (product, index) => `
@@ -55,9 +49,7 @@ function renderCart(cart) {
   attachEventListeners();
 }
 
-// --- Gắn các sự kiện cho nút (+), (-), và (x) ---
 function attachEventListeners() {
-  // Tăng số lượng
   document.querySelectorAll(".plus").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const index = e.target.dataset.index;
@@ -67,14 +59,12 @@ function attachEventListeners() {
     });
   });
 
-  // Giảm số lượng
   document.querySelectorAll(".minus").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const index = e.target.dataset.index;
       if (cart[index].quantity > 1) {
         cart[index].quantity--;
       } else {
-        // Nếu còn 1 mà bấm nữa → hỏi xoá
         if (confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không?")) {
           cart.splice(index, 1);
         }
@@ -84,7 +74,6 @@ function attachEventListeners() {
     });
   });
 
-  // Xoá sản phẩm khi bấm nút "x"
   document.querySelectorAll(".remove").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       const index = e.target.dataset.index;
@@ -97,7 +86,6 @@ function attachEventListeners() {
   });
 }
 
-// --- Kiểm tra & render ---
 if (cart.length > 0) {
   renderCart(cart);
 } else {
@@ -111,7 +99,6 @@ const updateCartCount = () => {
 };
 
 
-// Gọi hàm khi trang load
 updateCartCount();
 
 
@@ -126,7 +113,7 @@ const addToCart = (product) => {
     alert("🛒 Tăng số lượng sản phẩm trong giỏ!");
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount(); // 🟢 Cập nhật số lượng trên icon
+  updateCartCount(); 
 };
 
 const toggleBtn = document.getElementById("toggle");

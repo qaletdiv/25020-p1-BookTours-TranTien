@@ -55,31 +55,20 @@ function renderSanPham(products) {
     .join("");
 }
 
-// Gọi hàm async để fetch và xử lý sản phẩm
 layData("http://localhost:3000/products").then(products => renderSanPham(products));
 
-// const selectTour = document.getElementById("category-filter");
-// selectTour.addEventListener("change", (event) => {
-//   const id = event.target.value;
-//   console.log(id);
-//   layData(`http://localhost:3000/products?categoryid=${id}`).then(products => renderSanPham(products));
-// })
-
-// --- Hàm lấy dữ liệu (nếu bạn đã có rồi thì bỏ qua) ---
 async function layData(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error("Lỗi khi tải dữ liệu");
   return res.json();
 }
 
-// Hàm lấy dữ liệu từ API
 async function layData(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error("Lỗi khi tải dữ liệu");
   return res.json();
 }
 
-// Bộ lọc tour
 document.getElementById("tourFilterForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -93,28 +82,22 @@ document.getElementById("tourFilterForm").addEventListener("submit", async (e) =
   const tours = await layData("http://localhost:3000/products");
 
   const filteredTours = tours.filter((tour) => {
-    // 🔹 Lọc điểm đến
     const matchDestination =
       destination === "" || tour.destination.toLowerCase().includes(destination);
 
-    // 🔹 Lọc nơi khởi hành
     const matchDeparture = departure === "" || tour.departure === departure;
 
-    // 🔹 Lọc ngày đi (nếu có)
     const matchStartDate = startDate === "" || tour.startDate === startDate;
 
-    // 🔹 Lọc số ngày (ví dụ: "3 ngày 2 đêm" hoặc "5 ngày")
     const matchDuration = (() => {
       if (durationRange === "") return true;
 
       const [min, max] = durationRange.split("-").map(Number);
 
-      // tách số từ chuỗi, ví dụ "3 ngày 2 đêm" -> 3
       const tourDays = parseInt(tour.duration.match(/\d+/)?.[0] || 0, 10);
       return tourDays >= min && tourDays <= max;
     })();
 
-    // 🔹 Lọc giá
     const matchPrice = (() => {
       const price = Number(tour.price);
       if (priceMin && price < Number(priceMin)) return false;
@@ -161,7 +144,6 @@ const updateCartCount = () => {
   document.getElementById("cart-count").textContent = total;
 };
 
-// Gọi hàm khi trang load
 updateCartCount();
 
 const addToCart = (product) => {
@@ -175,7 +157,7 @@ const addToCart = (product) => {
     alert("🛒 Tăng số lượng sản phẩm trong giỏ!");
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount(); // 🟢 Cập nhật số lượng trên icon
+  updateCartCount(); 
 };
 
 const toggleBtn = document.getElementById("toggle");

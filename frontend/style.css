@@ -54,7 +54,7 @@ body {
 }
 
 .cart-wrapper {
-  position: relative; /* đây là key quan trọng để badge bám theo icon */
+  position: relative; 
   display: inline-block;
 }
 
@@ -67,8 +67,8 @@ body {
 
 #cart-count {
   position: absolute;
-  top: -6px; /* chỉnh vị trí dọc */
-  right: -10px; /* chỉnh vị trí ngang */
+  top: -6px; 
+  right: -10px; 
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -146,7 +146,6 @@ header a {
   vertical-align: middle;
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -163,19 +162,16 @@ header a {
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Caption text */
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -186,7 +182,6 @@ header a {
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -195,7 +190,6 @@ header a {
   top: 0;
 }
 
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -212,7 +206,6 @@ header a {
   background-color: #717171;
 }
 
-/* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -227,7 +220,6 @@ header a {
   }
 }
 
-/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev,
   .next,
@@ -264,7 +256,7 @@ header a {
 }
 
 .tour-chosen input[type="radio"] {
-  accent-color: #c0e7fd; /* đổi màu radio khi chọn */
+  accent-color: #c0e7fd; 
   cursor: pointer;
 }
 
@@ -576,12 +568,12 @@ header a {
 }
 
 .payment-option input[type="radio"] {
-  accent-color: #013879; /* đổi màu radio khi chọn */
+  accent-color: #013879; 
   margin-right: 10px;
 }
 
 input[type="radio"] {
-  transform: scale(2); /* phóng to 1.5 lần */
+  transform: scale(2);
   cursor: pointer;
 }
 
@@ -650,18 +642,18 @@ footer p {
 
   header nav {
     display: none;
-    flex-direction: column; /* để khi hiện ra thì menu dọc */
+    flex-direction: column; 
     gap: 20px;
     background: white;
     position: fixed;
     top: 50px;
     left: 0;
     width: 100%;
-    height: 100vh; /* full chiều cao màn hình */
+    height: 100vh; 
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 999;
-    overflow-y: auto; /* nếu menu dài thì cho scroll */
+    overflow-y: auto; 
     align-items: center;
   }
 
@@ -670,7 +662,6 @@ footer p {
     font-weight: 600;
   }
 
-  /* Khi header có class .active → show menu */
   header.active nav {
     display: flex;
   }
@@ -691,43 +682,37 @@ footer p {
 }
 
 @media screen and (max-width: 767px) {
-  /* ... các quy tắc đã có của bạn ... */
-
-  /* Bộ lọc Tour (Tour Filter - nằm trên Banner) */
   .main-content .filter {
-    position: static; /* Bỏ position absolute để nó nằm ngay dưới banner */
+    position: static; 
     margin-bottom: 20px;
-    padding: 15px; /* Giảm padding */
+    padding: 15px; 
   }
 
   .main-content .choose-tour {
-    flex-direction: column; /* Xếp chọn loại tour xuống dòng */
+    flex-direction: column; 
     gap: 10px;
   }
 
   .select-filter-all {
-    grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất cho các ô input/select */
+    grid-template-columns: 1fr; 
     gap: 15px;
   }
 
   .select-filter-all .research {
-    display: none; /* Ẩn nút tìm kiếm nhỏ, dùng nút .btn-search lớn bên ngoài */
+    display: none; 
   }
 
-  /* Bộ lọc Tour (Tour Filter - nằm độc lập) */
   .filter-group {
-    flex-direction: column; /* Xếp các filter-item thành 1 cột */
+    flex-direction: column; 
     gap: 10px;
   }
 
   .filter-item {
-    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    width: 100%;
   }
 
-  /* Tours nổi bật */
   .tours {
-    /* Bạn đã có: grid-template-columns: repeat(2, 1fr); */
-    grid-template-columns: 1fr; /* Chuyển về 1 cột trên điện thoại nhỏ để ảnh lớn hơn */
+    grid-template-columns: 1fr; 
     gap: 20px;
   }
 
@@ -735,47 +720,44 @@ footer p {
     margin-bottom: -14rem;
   }
 
-  /* Tours yêu thích */
   .favoriteTour h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
 
   .favoriteImg {
-    /* Bạn đã có: grid-template-columns: 1fr; */
     grid-template-columns: 1fr;
   }
 
   .img1 img {
-    height: auto; /* Chiều cao tự động */
+    height: auto; 
   }
 
   .img1 .overlay {
-    font-size: 2rem; /* Giảm kích thước chữ overlay */
+    font-size: 2rem; 
   }
 
   .img23 {
-    grid-template-columns: 1fr; /* Xếp 2 ảnh nhỏ xuống 2 dòng */
+    grid-template-columns: 1fr;
     gap: 15px;
   }
 
   .img23 img,
   .img4 img {
-    height: auto; /* Chiều cao tự động */
+    height: auto; 
   }
 
   .img234 {
     row-gap: 15px;
   }
 
-  /* Trang Checkout */
   .general-guest {
     font-size: 2rem;
     margin: 2rem 0;
   }
 
   .checkout {
-    grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất */
+    grid-template-columns: 1fr;
     gap: 30px;
   }
 
@@ -785,20 +767,20 @@ footer p {
   }
 
   .checkout .info-guest {
-    grid-template-columns: 1fr; /* 1 cột cho các input */
+    grid-template-columns: 1fr; 
     padding: 15px;
     gap: 10px;
   }
 
   .checkout .quantity-guest {
-    width: 100%; /* Chiếm hết chiều rộng */
+    width: 100%; 
     padding: 15px;
-    grid-template-columns: 1fr; /* Xếp nội dung và nút đếm xuống dòng */
+    grid-template-columns: 1fr; 
     align-items: flex-start;
   }
 
   .checkout .quantity-guest .count-guest {
-    justify-content: flex-start; /* Chỉnh nút đếm sang trái */
+    justify-content: flex-start; 
   }
 
   .note-more {
@@ -806,13 +788,12 @@ footer p {
   }
 
   .aside-content {
-    height: auto; /* Chiều cao tự động */
+    height: auto;
     padding: 20px;
   }
 
-  /* Footer */
   footer .footer-content {
-    grid-template-columns: 1fr; /* 1 cột duy nhất cho mobile */
+    grid-template-columns: 1fr; 
     gap: 1.5rem;
     padding: 20px 10px;
     text-align: center;
@@ -820,23 +801,16 @@ footer p {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  /* .btn-save {
-     position: static; 
-    } */
-
-  /* Cấu hình chung */
   .container {
-    max-width: 960px; /* Giới hạn container phù hợp với tablet */
+    max-width: 960px; 
   }
 
-  /* Header */
   header nav {
-    gap: 1.5rem; /* Giảm khoảng cách giữa các mục menu */
+    gap: 1.5rem; 
   }
 
-  /* Bộ lọc Tour (nằm trên banner) */
   .main-content .filter {
-    bottom: 50px; /* Giảm vị trí nổi */
+    bottom: 50px; 
     padding: 20px;
     margin-bottom: -60px;
   }
@@ -845,7 +819,7 @@ footer p {
     grid-template-columns: repeat(
       5,
       1fr
-    ); /* Giữ 5 cột nhưng thay đổi tỷ lệ một chút nếu cần */
+    ); 
     gap: 10px;
   }
 
@@ -854,43 +828,41 @@ footer p {
     height: auto;
   }
 
-  /* Tours nổi bật */
-  /* Bạn đã có: .tours { grid-template-columns: repeat(3, 1fr); } */
+
   .tour-img {
-    height: 15rem; /* Giảm chiều cao ảnh */
+    height: 15rem; 
   }
   .tours img {
     height: 15rem;
   }
 
-  /* Tours yêu thích */
   .img1 img {
-    height: 25rem; /* Giảm chiều cao ảnh lớn */
+    height: 25rem; 
   }
 
   .img23 img,
   .img4 img {
-    height: 12.25rem; /* Giảm chiều cao ảnh nhỏ */
+    height: 12.25rem; 
   }
 
-  /* Trang Checkout */
+  
   .checkout {
-    grid-template-columns: 60% 35%; /* Tỷ lệ 60/35 cho nội dung và aside */
+    grid-template-columns: 60% 35%; 
     gap: 5%;
   }
 
   .checkout .info-guest {
-    grid-template-columns: 1fr 1fr; /* Giữ 2 cột */
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
   .checkout .quantity-guest {
-    width: 70%; /* Chiếm 70% chiều rộng */
+    width: 70%; 
   }
 
-  /* Footer */
+
   footer .footer-content {
-    grid-template-columns: repeat(2, 1fr); /* 2 cột cho footer trên tablet */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 2rem;
   }
 }

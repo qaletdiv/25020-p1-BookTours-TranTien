@@ -93,13 +93,13 @@ const booking = document.querySelector(".btn-tour");
 booking.addEventListener("click", async (event) => {
   try {
     const today = new Date();
-    const day = String(today.getDate()).padStart(2, "0"); // Lấy ngày và đảm bảo 2 chữ số
-    const month = String(today.getMonth() + 1).padStart(2, "0"); // Lấy tháng (cộng 1) và đảm bảo 2 chữ số
-    const year = today.getFullYear(); // Lấy năm đầy đủ
+    const day = String(today.getDate()).padStart(2, "0"); 
+    const month = String(today.getMonth() + 1).padStart(2, "0"); 
+    const year = today.getFullYear(); 
 
     const formattedDate = `${day}/${month}/${year}`;
 
-    console.log(formattedDate); // Ví dụ: "26/09/2023"
+    console.log(formattedDate); 
     const newOrder = {
       iduser: idUser,
       name: nameuser.value,
@@ -126,8 +126,6 @@ const updateCartCount = () => {
   document.getElementById("cart-count").textContent = total;
 };
 
-
-// Gọi hàm khi trang load
 updateCartCount();
 
 
@@ -142,7 +140,7 @@ const addToCart = (product) => {
     alert("🛒 Tăng số lượng sản phẩm trong giỏ!");
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount(); // 🟢 Cập nhật số lượng trên icon
+  updateCartCount(); 
 };
 
 const toggleBtn = document.getElementById("toggle");
