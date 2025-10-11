@@ -23,13 +23,77 @@ async function layData(api) {
 function renderSanPhamChiTiet(product) {
   const productDiv = document.getElementById("product-detail");
   if (!productDiv) return;
+
+  // Hàm helper để tạo HTML cho chi tiết giá (Included/Excluded)
+  const renderPriceDetails = (details) => {
+    let html = '';
+    if (details && details.included && details.excluded) {
+      html += `
+        <div class="price-included" style="margin-bottom: 1.5rem;">
+          <h4 style="color: green; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check"></i> GIÁ TOUR BAO GỒM:</h4>
+          <ul>
+            ${details.included.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="price-excluded">
+          <h4 style="color: red; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-xmark"></i> GIÁ TOUR KHÔNG BAO GỒM:</h4>
+          <ul>
+            ${details.excluded.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+    return html;
+  };
+
+  // Hàm helper để tạo HTML cho lịch trình (Schedule)
+  const renderSchedule = (schedule) => {
+    let html = '';
+    if (schedule) {
+      // Chuyển object schedule thành mảng các cặp [key, value] để lặp
+      const scheduleEntries = Object.entries(schedule);
+      html += '<ul>';
+      scheduleEntries.forEach(([key, value], index) => {
+        html += `
+          <li style="margin-bottom: 1rem;">
+            <b style="color: #007bff;">Ngày ${index + 1}:</b> ${value}
+          </li>
+        `;
+      });
+      html += '</ul>';
+    }
+    return html;
+  };
+
+  // Hàm helper để tạo HTML cho Chính sách (Policy)
+  const renderPolicy = (policy) => {
+    let html = '';
+    if (policy) {
+      html += `
+        <div class="policy-booking" style="margin-bottom: 1rem;">
+          <h4 style="color: #ff9900; margin-bottom: 0.5rem;"><i class="fa-solid fa-clipboard-list"></i> CHÍNH SÁCH ĐĂNG KÝ:</h4>
+          <p>${policy.booking}</p>
+        </div>
+        <div class="policy-cancellation" style="margin-bottom: 1rem;">
+          <h4 style="color: #ff9900; margin-bottom: 0.5rem;"><i class="fa-solid fa-ban"></i> CHÍNH SÁCH HỦY TOUR:</h4>
+          <p>${policy.cancellation}</p>
+        </div>
+        <div class="policy-notes">
+          <h4 style="color: #ff9900; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-info"></i> LƯU Ý:</h4>
+          <p>${policy.notes}</p>
+        </div>
+      `;
+    }
+    return html;
+  };
+
+
   productDiv.innerHTML = `
         <div class="main-content">
           <section class="tour-general">
             <p class="tourId">
               <i class="fa-solid fa-ticket"></i> Mã tour:
-              <span style="font-weight: 600">MIEN TRUNGDANANG</span>
-            </p>
+              <span style="font-weight: 600">MIEN TRUNGDANANG</span> </p>
             <div class="tour-name">
               <h2 class="tourName">
               ${product.name}
@@ -56,75 +120,58 @@ function renderSanPhamChiTiet(product) {
               <img
                 class="img1"
                 src="${product.images[0]}"
-                alt=""
+                alt="${product.name} - ảnh 1"
               />
             </div>
             <div class="image-4">
               <img
                 src="${product.images[1]}"
-                alt=""
+                alt="${product.name} - ảnh 2"
               />
               <img
                 src="${product.images[1]}"
-                alt=""
+                alt="${product.name} - ảnh 3"
               />
               <img
                 src="${product.images[1]}"
-                alt=""
+                alt="${product.name} - ảnh 4"
               />
               <img
                 src="${product.images[1]}"
-                alt=""
+                alt="${product.name} - ảnh 5"
               />
             </div>
           </section>
           <section class="infomation-tour">
+            
             <div class="general">
-              <h2>Tổng Quan</h2>
-              <h3>Ưu Đãi</h3>
-              <ul>
-                <li>
-                  <b>Không rủi ro Visa:</b> Hoàn 100% giá tour (Bao gồm Phí
-                  Visa).
-                </li>
-                <li>
-                  <b>Tiện lợi ngay khi bắt đầu:</b> Đưa đón tận nhà Miễn phí 2
-                  chiều (nội thành Hà Nội).
-                </li>
-                <li><b>Duy trì kết nối:</b> Tặng sim 3G/4G.</li>
-              </ul>
-              <p style="margin-bottom: 1rem;">
-                  <i
-                    >Số lượng quà tặng có giới hạn và các khuyến mãi có điều
-                    kiện áp dụng.</i
-                  >
-                </p>
-              <h3>ĐIỂM NHẤN CHƯƠNG TRÌNH</h3>
-              <ul>
-                <li>
-                  <b>Tham quan:</b> Quảng trường Stachusplatz, Quảng trường San
-                  Marco, Cầu Than Thở, Nhà thờ Santa Maria, Khu phố cổ Lucerne,
-                  Phố cổ Bern, Khải Hoàn Môn, Điện Invalides,….
-                </li>
-                <li><b>Lưu trú:</b> Khách sạn 3 - 4 sao.</li>
-                <li>
-                  <b>Ăn uống:</b> Thực đơn kết hợp Menu Châu Âu, Châu Á, bữa tối
-                  sang trọng mang phong cách Châu Âu trên du thuyền sông Seine.
-                </li>
-                <li>
-                  <b>Hoạt động khác:</b> Du thuyền sông Seine, tham quan
-                  Gondola.
-                </li>
-              </ul>
+              <h2>TỔNG QUAN</h2>
+              <p>${product.description}</p>
               
+              <h3 style="margin-top: 1.5rem; color: #007bff;">ĐIỂM NHẤN CHƯƠNG TRÌNH</h3>
+              <ul style="list-style-type: disc; padding-left: 20px;">
+                ${product.highlights.map(item => `<li><b>${item.split(':').length > 1 ? item.split(':')[0] + ':' : ''}</b> ${item.split(':').length > 1 ? item.split(':')[1].trim() : item}</li>`).join('')}
+              </ul>
+              <hr style="margin: 20px 0;">
+
+              <h2 style="color: #28a745;">LỊCH TRÌNH CHI TIẾT</h2>
+              ${renderSchedule(product.schedule)}
+              <hr style="margin: 20px 0;">
+
+              <h2 style="color: #dc3545;">CHI TIẾT GIÁ TOUR</h2>
+              ${renderPriceDetails(product.priceDetails)}
+              <hr style="margin: 20px 0;">
+
+              <h2 style="color: #6f42c1;">CHÍNH SÁCH VÀ QUY ĐỊNH</h2>
+              ${renderPolicy(product.policy)}
             </div>
             <div class="booking">
               <div class="box-booking">
                 <h3>Thông Tin Cơ Bản</h3>
                 <ul>
                   <li>Khởi hành: ${product.startDate}</li>
-                  <li>Tập trung: 20:10</li>
                   <li>Thời gian: ${product.duration}</li>
+                  <li>Phương tiện: ${product.departure.includes('sân bay') || product.name.includes('Tour trọn gói') ? 'Máy Bay + Xe Ôtô' : 'Xe Ôtô'}</li>
                 </ul>
                 <p>
                   <span style="color: red; font-weight: 650; font-size: 2rem"
@@ -135,13 +182,13 @@ function renderSanPhamChiTiet(product) {
                   >
                 </p>
                 <button class="btn-tour" onclick='addToCart(${JSON.stringify(
-                  product //bấm vào nó sẽ gọi hàm addToCart bên dưới để truyền tham số vào
+                  product
                 )})'>Đặt Ngay</button> 
               </div>
             </div>
           </section>
         </div>
-            `;
+          `;
 }
 
 // Gọi hàm async để fetch và xử lý sản phẩm
@@ -188,4 +235,9 @@ const addCart = (product) => {
   updateCartCount(); // 🟢 Cập nhật số lượng trên icon
 };
 
+const toggleBtn = document.getElementById("toggle");
+const header = document.querySelector("header");
 
+toggleBtn.addEventListener("click", () => {
+  header.classList.toggle("active");
+});

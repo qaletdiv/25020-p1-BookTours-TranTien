@@ -81,8 +81,6 @@ body {
   font-weight: bold;
 }
 
-
-
 .btn-search {
   display: block;
   margin: 15px auto 0;
@@ -99,7 +97,6 @@ body {
 .btn-search:hover {
   background: #d62828;
 }
-
 
 header {
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
@@ -142,15 +139,16 @@ header a {
 }
 
 .mySlides {
-display: none
+  display: none;
 }
 
 .banner img {
-vertical-align: middle;
+  vertical-align: middle;
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -172,8 +170,9 @@ vertical-align: middle;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Caption text */
@@ -208,7 +207,8 @@ vertical-align: middle;
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -219,13 +219,21 @@ vertical-align: middle;
 }
 
 @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
 }
 
 .main-content .filter {
@@ -260,7 +268,6 @@ vertical-align: middle;
   cursor: pointer;
 }
 
-
 .select-time-destination .go-des {
   display: flex;
   gap: 8px;
@@ -275,12 +282,11 @@ vertical-align: middle;
 
 .select-filter-all .research {
   display: flex;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   width: 64px;
   height: 64px;
   background-color: #ed1b35;
-  
 }
 
 .select-filter-all .research:hover {
@@ -498,6 +504,22 @@ vertical-align: middle;
   gap: 10px;
 }
 
+.btn-save {
+  position: relative;
+  left: 50%;
+  border: none;
+  margin-top: 10px;
+  background-color: #ed1b35;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-save:hover {
+  background-color: #013879;
+}
+
 .quantity-guest p {
   font-weight: bold;
   font-size: 17px;
@@ -571,11 +593,18 @@ input[type="radio"] {
 .aside-content {
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
   width: 100%;
-  height: 410px;
+  height: auto;
   padding: 30px;
   text-align: center;
   position: relative;
   z-index: 3;
+}
+
+.checkout {
+  display: grid;
+  grid-template-columns: 65% 30%;
+  gap: 5%;
+  align-items: start;
 }
 
 .aside-content .booking-tour button {
@@ -606,10 +635,10 @@ footer p {
 }
 
 @media screen and (max-width: 767px) {
-    .container {
+  .container {
     max-width: none;
-    width: 100%; 
-    padding: 0 10px; 
+    width: 100%;
+    padding: 0 10px;
     margin: 0;
   }
 
@@ -625,25 +654,29 @@ footer p {
     gap: 20px;
     background: white;
     position: fixed;
-    top: 50px;   
+    top: 50px;
     left: 0;
     width: 100%;
-    height: 100vh;         /* full chiều cao màn hình */
+    height: 100vh; /* full chiều cao màn hình */
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     z-index: 999;
-    overflow-y: auto;      /* nếu menu dài thì cho scroll */
+    overflow-y: auto; /* nếu menu dài thì cho scroll */
     align-items: center;
   }
 
   header nav a {
     font-size: 20px;
-    font-weight:600;
+    font-weight: 600;
   }
 
   /* Khi header có class .active → show menu */
-  header.active nav{
+  header.active nav {
     display: flex;
+  }
+
+  .btn-save {
+    position: static;
   }
 
   .tours {
@@ -657,8 +690,207 @@ footer p {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023) {
+@media screen and (max-width: 767px) {
+  /* ... các quy tắc đã có của bạn ... */
+
+  /* Bộ lọc Tour (Tour Filter - nằm trên Banner) */
+  .main-content .filter {
+    position: static; /* Bỏ position absolute để nó nằm ngay dưới banner */
+    margin-bottom: 20px;
+    padding: 15px; /* Giảm padding */
+  }
+
+  .main-content .choose-tour {
+    flex-direction: column; /* Xếp chọn loại tour xuống dòng */
+    gap: 10px;
+  }
+
+  .select-filter-all {
+    grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất cho các ô input/select */
+    gap: 15px;
+  }
+
+  .select-filter-all .research {
+    display: none; /* Ẩn nút tìm kiếm nhỏ, dùng nút .btn-search lớn bên ngoài */
+  }
+
+  /* Bộ lọc Tour (Tour Filter - nằm độc lập) */
+  .filter-group {
+    flex-direction: column; /* Xếp các filter-item thành 1 cột */
+    gap: 10px;
+  }
+
+  .filter-item {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+  }
+
+  /* Tours nổi bật */
   .tours {
-    grid-template-columns: repeat(3, 1fr);
+    /* Bạn đã có: grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: 1fr; /* Chuyển về 1 cột trên điện thoại nhỏ để ảnh lớn hơn */
+    gap: 20px;
+  }
+
+  .favoriteTour {
+    margin-bottom: -14rem;
+  }
+
+  /* Tours yêu thích */
+  .favoriteTour h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .favoriteImg {
+    /* Bạn đã có: grid-template-columns: 1fr; */
+    grid-template-columns: 1fr;
+  }
+
+  .img1 img {
+    height: auto; /* Chiều cao tự động */
+  }
+
+  .img1 .overlay {
+    font-size: 2rem; /* Giảm kích thước chữ overlay */
+  }
+
+  .img23 {
+    grid-template-columns: 1fr; /* Xếp 2 ảnh nhỏ xuống 2 dòng */
+    gap: 15px;
+  }
+
+  .img23 img,
+  .img4 img {
+    height: auto; /* Chiều cao tự động */
+  }
+
+  .img234 {
+    row-gap: 15px;
+  }
+
+  /* Trang Checkout */
+  .general-guest {
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+
+  .checkout {
+    grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất */
+    gap: 30px;
+  }
+
+  .checkout h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .checkout .info-guest {
+    grid-template-columns: 1fr; /* 1 cột cho các input */
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .checkout .quantity-guest {
+    width: 100%; /* Chiếm hết chiều rộng */
+    padding: 15px;
+    grid-template-columns: 1fr; /* Xếp nội dung và nút đếm xuống dòng */
+    align-items: flex-start;
+  }
+
+  .checkout .quantity-guest .count-guest {
+    justify-content: flex-start; /* Chỉnh nút đếm sang trái */
+  }
+
+  .note-more {
+    margin-bottom: 15px;
+  }
+
+  .aside-content {
+    height: auto; /* Chiều cao tự động */
+    padding: 20px;
+  }
+
+  /* Footer */
+  footer .footer-content {
+    grid-template-columns: 1fr; /* 1 cột duy nhất cho mobile */
+    gap: 1.5rem;
+    padding: 20px 10px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* .btn-save {
+     position: static; 
+    } */
+
+  /* Cấu hình chung */
+  .container {
+    max-width: 960px; /* Giới hạn container phù hợp với tablet */
+  }
+
+  /* Header */
+  header nav {
+    gap: 1.5rem; /* Giảm khoảng cách giữa các mục menu */
+  }
+
+  /* Bộ lọc Tour (nằm trên banner) */
+  .main-content .filter {
+    bottom: 50px; /* Giảm vị trí nổi */
+    padding: 20px;
+    margin-bottom: -60px;
+  }
+
+  .select-filter-all {
+    grid-template-columns: repeat(
+      5,
+      1fr
+    ); /* Giữ 5 cột nhưng thay đổi tỷ lệ một chút nếu cần */
+    gap: 10px;
+  }
+
+  .select-filter-all .research {
+    width: auto;
+    height: auto;
+  }
+
+  /* Tours nổi bật */
+  /* Bạn đã có: .tours { grid-template-columns: repeat(3, 1fr); } */
+  .tour-img {
+    height: 15rem; /* Giảm chiều cao ảnh */
+  }
+  .tours img {
+    height: 15rem;
+  }
+
+  /* Tours yêu thích */
+  .img1 img {
+    height: 25rem; /* Giảm chiều cao ảnh lớn */
+  }
+
+  .img23 img,
+  .img4 img {
+    height: 12.25rem; /* Giảm chiều cao ảnh nhỏ */
+  }
+
+  /* Trang Checkout */
+  .checkout {
+    grid-template-columns: 60% 35%; /* Tỷ lệ 60/35 cho nội dung và aside */
+    gap: 5%;
+  }
+
+  .checkout .info-guest {
+    grid-template-columns: 1fr 1fr; /* Giữ 2 cột */
+    gap: 10px;
+  }
+
+  .checkout .quantity-guest {
+    width: 70%; /* Chiếm 70% chiều rộng */
+  }
+
+  /* Footer */
+  footer .footer-content {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cho footer trên tablet */
+    gap: 2rem;
   }
 }

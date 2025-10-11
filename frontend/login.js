@@ -38,3 +38,10 @@ async function hashPassword(password) {
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
 };
+
+const toggleBtn = document.getElementById("toggle");
+const header = document.querySelector("header");
+
+toggleBtn.addEventListener("click", () => {
+  header.classList.toggle("active");
+});

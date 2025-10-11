@@ -144,3 +144,10 @@ const addToCart = (product) => {
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount(); // 🟢 Cập nhật số lượng trên icon
 };
+
+const toggleBtn = document.getElementById("toggle");
+const header = document.querySelector("header");
+
+toggleBtn.addEventListener("click", () => {
+  header.classList.toggle("active");
+});

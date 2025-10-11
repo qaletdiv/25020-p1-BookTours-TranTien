@@ -60,18 +60,22 @@ header .header-content {
   padding: 20px 30px;
 }
 
-.header-content img {
+header img {
   width: 9.6875rem;
   height: 2.6875rem;
 }
 
-.header-content nav {
+header #toggle {
+  display: none;
+}
+
+header nav {
   display: flex;
   gap: 2.1875rem;
   align-items: center;
 }
 
-.header-content a {
+header a {
   text-decoration: none;
   color: #013879;
   font-weight: 500;
@@ -416,3 +420,237 @@ footer p {
   font-weight: 500;
 }
 
+@media screen and (max-width: 767px) {
+    .container {
+    max-width: none;
+    width: 100%; 
+    padding: 0 10px; 
+    margin: 0;
+  }
+
+  header #toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  header nav {
+    display: none;
+    flex-direction: column; /* để khi hiện ra thì menu dọc */
+    gap: 20px;
+    background: white;
+    position: fixed;
+    top: 50px;   
+    left: 0;
+    width: 100%;
+    height: 100vh;         /* full chiều cao màn hình */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 999;
+    overflow-y: auto;      /* nếu menu dài thì cho scroll */
+    align-items: center;
+  }
+
+  header nav a {
+    font-size: 20px;
+    font-weight:600;
+  }
+
+  /* Khi header có class .active → show menu */
+  header.active nav{
+    display: flex;
+  }
+
+  .tours {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .favoriteImg {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023) {
+  .tours {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+    /* ... các quy tắc đã có của bạn ... */
+
+    /* Điều chỉnh Typography cho màn hình nhỏ */
+    html {
+        font-size: 14px; /* Giảm font-size cơ bản một chút */
+    }
+
+    /* Tiêu đề Tour */
+    .tourName {
+        font-size: 1.5rem; /* Giảm kích thước tiêu đề */
+    }
+
+    /* Header */
+    header .header-content {
+        padding: 15px 10px; /* Giảm padding */
+    }
+
+    /* Chi tiết Tour và Booking */
+    .main-content .tour-name {
+        flex-direction: column; /* Xếp thông tin tour và nút booking/info xuống dòng */
+        align-items: flex-start;
+    }
+
+    .main-content .info {
+        flex-direction: column; /* Xếp thông tin phụ (timing, id, startdes) xuống dòng */
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+    
+    .btn-tour {
+        width: 100%; /* Nút đầy đủ chiều rộng */
+        height: 45px;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    /* Layout ảnh Tour */
+    .main-content .tour-image {
+        grid-template-columns: 1fr; /* Chỉ 1 cột ảnh lớn */
+        margin: 1.5rem 0; /* Giảm margin */
+    }
+    
+    .tour-image img {
+        height: auto; /* Để chiều cao tự động theo tỷ lệ ảnh */
+    }
+
+    .main-content .image-4 {
+        grid-template-columns: repeat(2, 1fr); /* Giữ 2 cột cho 4 ảnh nhỏ, nhưng giờ sẽ chiếm toàn bộ chiều rộng */
+        grid-template-rows: auto;
+    }
+
+    .image-4 img {
+        height: auto; /* Để chiều cao tự động theo tỷ lệ ảnh */
+    }
+    
+    /* Layout Thông tin & Booking */
+    .main-content .infomation-tour {
+        grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất */
+        gap: 20px;
+    }
+
+    .infomation-tour .general h2, .infomation-tour .general h3{
+        margin-top: 1rem; /* Thêm khoảng cách nếu cần */
+    }
+
+    .infomation-tour .booking {
+        box-shadow: 0 5px 10px rgba(0, 12, 18, 0.1); /* Giảm shadow cho gọn */
+        height: auto; /* Chiều cao tự động */
+        padding: 20px;
+    }
+    
+    /* Trang Giỏ hàng */
+    .container .heading2 {
+        margin: 1.5rem 0;
+        font-size: 2rem;
+    }
+
+    .main-container-cart {
+        grid-template-columns: 1fr; /* Chỉ 1 cột */
+    }
+    
+    /* Bảng giỏ hàng */
+    .cart-table {
+        margin: 10px auto;
+        overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
+        -webkit-overflow-scrolling: touch; /* Hỗ trợ cuộn mượt trên iOS */
+    }
+    
+    .cart-table table {
+        /* Đảm bảo bảng có chiều rộng tối thiểu để nội dung không bị co lại quá mức */
+        min-width: 650px; 
+    }
+    
+    .cart-table .product {
+        flex-direction: column; /* Xếp ảnh và tiêu đề xuống dòng */
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .cart-table .product a {
+         align-items: flex-start;
+         flex-direction: column;
+    }
+
+    .cart-table .product .title {
+        font-size: 0.9rem;
+    }
+
+    /* Hộp tổng tiền */
+    .cart-total-box {
+        max-width: 100%;
+        margin: 20px 0;
+    }
+    
+    /* Footer */
+    footer .footer-content {
+        grid-template-columns: 1fr; /* Chỉ 1 cột duy nhất */
+        gap: 1.5rem;
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    
+    
+    .inDam {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Cấu hình chung */
+    .container {
+        max-width: 900px; /* Giới hạn container phù hợp với tablet */
+    }
+    
+    /* Header */
+    header .header-content {
+        padding: 20px 20px;
+    }
+
+    header nav {
+        gap: 1rem; /* Giảm khoảng cách giữa các mục menu */
+    }
+
+    /* Layout ảnh Tour */
+    .main-content .tour-image {
+        grid-template-columns: repeat(2, 1fr); /* Giữ 2 cột */
+        gap: 10px;
+    }
+
+    .tour-image img {
+        height: 20rem; /* Giảm chiều cao ảnh */
+    }
+
+    .image-4 img {
+        height: 9.95rem; /* Giảm chiều cao ảnh */
+    }
+
+    /* Layout Thông tin & Booking */
+    .main-content .infomation-tour {
+        grid-template-columns: 60% 35%; /* Giảm một chút cho cột thông tin và tăng cột booking */
+        gap: 5%;
+    }
+
+    /* Trang Giỏ hàng */
+    .main-container-cart {
+        grid-template-columns: 60% 40%; /* Thay đổi tỷ lệ một chút cho hợp lý */
+    }
+    
+    /* Footer */
+    footer .footer-content {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột cho footer trên tablet */
+        gap: 2rem;
+    }
+}

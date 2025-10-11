@@ -106,28 +106,38 @@ body {
   padding: 10px;
 }
 
-header .header-content {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-self: center;
-    padding: 20px 30px;
+header {
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
-.header-content img {
+header .header-content {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  z-index: 2;
+}
+
+header img {
   width: 9.6875rem;
   height: 2.6875rem;
 }
 
-.header-content nav {
-  display: flex;
-  gap: 2.1875rem;
-  align-items: center;
+header #toggle {
+  display: none;
 }
 
-.header-content a {
-   text-decoration: none;
-   color: #013879;
+header nav {
+  display: flex;
+  gap: 2.1875rem;
+}
+
+header a {
+  text-decoration: none;
+  color: #013879;
   font-weight: 500;
 }
 
@@ -233,4 +243,162 @@ footer p {
 }
 
 
+@media screen and (max-width: 767px) {
+    .container {
+    max-width: none;
+    width: 100%; 
+    padding: 0 10px; 
+    margin: 0;
+  }
 
+  header #toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  header nav {
+    display: none;
+    flex-direction: column; /* để khi hiện ra thì menu dọc */
+    gap: 20px;
+    background: white;
+    position: fixed;
+    top: 50px;   
+    left: 0;
+    width: 100%;
+    height: 100vh;         /* full chiều cao màn hình */
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 999;
+    overflow-y: auto;      /* nếu menu dài thì cho scroll */
+    align-items: center;
+  }
+
+  header nav a {
+    font-size: 20px;
+    font-weight:600;
+  }
+
+  /* Khi header có class .active → show menu */
+  header.active nav{
+    display: flex;
+  }
+
+  .tours {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .favoriteImg {
+    grid-template-columns: 1fr;
+  }
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023) {
+  .tours {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Desktop (>=1024px) --- */
+main .main-content {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 1.5rem;
+}
+
+/* --- Tablet (768px–1023px) --- */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  main .main-content {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 1rem;
+  }
+
+  .main-content .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Mobile (<768px) --- */
+@media screen and (max-width: 767px) {
+  main .main-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Bộ lọc chuyển lên đầu */
+  .filter {
+    order: -1;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Sắp xếp lại tour: 1 cột */
+  .main-content .products {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-img img {
+    height: auto;
+  }
+
+  .main-content h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+  }
+
+  /* Điều chỉnh font cho dễ đọc hơn */
+  .tourName {
+    font-size: 1.1rem;
+  }
+
+  .timing, .tourId, .startdes {
+    font-size: 0.85rem;
+  }
+
+  /* Khoảng cách và padding nhẹ hơn */
+  .filter {
+    padding: 8px;
+  }
+
+  .filter form {
+    gap: 8px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  footer .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* ---- Mobile (<768px) ---- */
+@media screen and (max-width: 767px) {
+  footer {
+    padding: 25px 15px;
+    text-align: center;
+  }
+
+  footer .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  footer h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  footer p,
+  footer a {
+    font-size: 0.9rem;
+  }
+
+  footer .social-icons {
+    justify-content: center;
+  }
+}
