@@ -6,8 +6,11 @@ formSignup.addEventListener("submit", async (event) => {
   const nameUser = document.querySelector("#email").value.trim(); //Nếu bạn không dùng .value, thì biến nameUser sẽ lưu cả element input -> Kết quả: <input id="email" type="text" ...>
   const password = document.querySelector("#password").value.trim();
   const repassword = document.querySelector("#re-password").value.trim();
+  const fullName = document.querySelector("#name").value.trim();
+  const phoneNumber = document.querySelector("#phone").value.trim();
+
   console.log(nameUser, password, repassword);
-  if (nameUser === "" || password === "" || repassword === "") {
+  if (nameUser === "" || password === "" || repassword === "" || fullName === "" || phoneNumber === "") {
     messageError.textContent = "Vui lòng nhập đầy đủ thông tin";
     return;
   }
@@ -30,6 +33,8 @@ formSignup.addEventListener("submit", async (event) => {
       return;
     }
     const newUser = {
+      name: fullName,
+      phone: phoneNumber,
       email: nameUser,
       //password: password,
       password: await hashPassword(password),

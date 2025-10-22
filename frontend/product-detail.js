@@ -1,33 +1,42 @@
-const user = JSON.parse(localStorage.getItem("User")) || []; //Ghi nhớ trạng thái đăng nhập, hiện trên trang chủ, JSON.parse dùng để chuyển chuỗi JSON thành object
-console.log(user);
+const user = JSON.parse(localStorage.getItem("User")) || [];
 if (user.length !== 0) {
   const login = document.querySelector("#login");
   login.innerHTML = '<i class="fa-solid fa-circle-user"></i> Tài Khoản Tôi';
   login.setAttribute('href','myaccount.html')
 }
-const url = new URL(window.location.href); //lấy toàn bộ đường dẫn và phân tích
-const id = url.searchParams.get("id"); //lấy ra giá trị của tham số id trên URL
-console.log(id);
+const url = new URL(window.location.href);
+const id = url.searchParams.get("id"); 
 
 async function layData(api) {
   try {
     const response = await fetch(api);
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
-    console.error("Lỗi Fetch API (async/await):", error);
-    return [];
+    console.error("Lỗi Fetch API (layData):", error);
+    return null;
   }
 }
+
+async function layAllData(api) {
+    try {
+        const response = await fetch(api);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Lỗi Fetch API (layAllData):", error);
+        return [];
+    }
+}
+
 function renderSanPhamChiTiet(product) {
   const productDiv = document.getElementById("product-detail");
   if (!productDiv) return;
 
-  // Hàm helper để tạo HTML cho chi tiết giá (Included/Excluded)
+
   const renderPriceDetails = (details) => {
-    let html = '';
-    if (details && details.included && details.excluded) {
+    let html = ''; 
+    if (details && details.included && details.excluded) { 
       html += `
         <div class="price-included" style="margin-bottom: 1.5rem;">
           <h4 style="color: green; margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check"></i> GIÁ TOUR BAO GỒM:</h4>
@@ -46,12 +55,10 @@ function renderSanPhamChiTiet(product) {
     return html;
   };
 
-  // Hàm helper để tạo HTML cho lịch trình (Schedule)
   const renderSchedule = (schedule) => {
     let html = '';
     if (schedule) {
-      // Chuyển object schedule thành mảng các cặp [key, value] để lặp
-      const scheduleEntries = Object.entries(schedule);
+      const scheduleEntries = Object.entries(schedule); 
       html += '<ul>';
       scheduleEntries.forEach(([key, value], index) => {
         html += `
@@ -85,7 +92,6 @@ function renderSanPhamChiTiet(product) {
     }
     return html;
   };
-
 
   productDiv.innerHTML = `
         <div class="main-content">
@@ -149,7 +155,11 @@ function renderSanPhamChiTiet(product) {
               
               <h3 style="margin-top: 1.5rem; color: #007bff;">ĐIỂM NHẤN CHƯƠNG TRÌNH</h3>
               <ul style="list-style-type: disc; padding-left: 20px;">
-                ${product.highlights.map(item => `<li><b>${item.split(':').length > 1 ? item.split(':')[0] + ':' : ''}</b> ${item.split(':').length > 1 ? item.split(':')[1].trim() : item}</li>`).join('')}
+                ${product.highlights.map(item => 
+                  `<li><b>${item.split(':').length > 1 ? item.split(':')[0] + ':' : ''}</b> 
+                  ${item.split(':').length > 1 ? item.split(':')[1].trim() : item}
+                  </li>`)
+                  .join('')}
               </ul>
               <hr style="margin: 20px 0;">
 
@@ -186,27 +196,94 @@ function renderSanPhamChiTiet(product) {
               </div>
             </div>
           </section>
+          
+          <section class="related-tours">
+              <h2>TOUR DU LỊCH TƯƠNG TỰ</h2>
+              <div class="product-list" id="related-products-container">
+                  </div>
+          </section>
         </div>
           `;
 }
 
-// Gọi hàm async để fetch và xử lý sản phẩm
-layData(`http://localhost:3000/products/${id}`).then((product) =>
-  renderSanPhamChiTiet(product)
-);
+function renderRelatedTours(products) {
+    const container = document.getElementById("related-products-container");
+    if (!container) return;
 
-const cart = JSON.parse(localStorage.getItem("cart")) || []; //Nghĩa là mỗi lần load trang, giỏ hàng sẽ được khởi tạo lại từ dữ liệu đã lưu trước đó.
-const addToCart = (product) => { //Ta có hàm từ onclick truyền vào là {id: 1, name: "Tour Đà Nẵng", ...} hay product = {id: 1, name: "Tour Đà Nẵng", ...}
-  console.log(product);
-  let item = cart.find((p) => p.id === product.id); //tìm trong giỏ hàng có sản phẩm nào có cùng id với sản phẩm product đang muốn thêm hay không. 
+    if (products.length === 0) {
+        container.innerHTML = "<p>Không tìm thấy tour du lịch tương tự.</p>";
+        return;
+    }
+
+    const html = products.map(product => `
+        <div class="tour-card">
+            <div class="tour-card-image">
+                <a href="product-detail.html?id=${product.id}"><img src="${product.images[0]}" alt="${product.name}" /></a>
+            </div>
+            <div class="tour-card-body">
+                <h4><a href="product-detail.html?id=${product.id}">${product.name}</a></h4>
+                <p class="price">${product.price.toLocaleString("vi-VN")} VNĐ</p>
+                <p class="duration"><i class="fa-solid fa-clock"></i> ${product.duration}</p>
+                <p class="departure"><i class="fa-solid fa-location-dot"></i> ${product.destination}</p>
+                <a href="product-detail.html?id=${product.id}" class="btn-detail">Xem Chi Tiết</a>
+            </div>
+        </div>
+    `).join('');
+
+    container.innerHTML = html;
+}
+
+async function findAndRenderRelatedTours(currentProduct) {
+    const allProducts = await layAllData('http://localhost:3000/products');
+
+    if (!allProducts || allProducts.length === 0) {
+        return;
+    }
+
+    const currentId = currentProduct.id;
+    const currentDestination = currentProduct.destination;
+    const currentCategory = currentProduct.categoryid;
+    const MAX_RELATED = 4; 
+
+    let related = allProducts.filter(p => 
+        p.id !== currentId && p.destination === currentDestination
+    );
+    
+    if (related.length < MAX_RELATED) {
+        const categoryRelated = allProducts.filter(p => 
+            p.id !== currentId && p.categoryid === currentCategory && 
+            !related.some(r => r.id === p.id) 
+        );
+        related = related.concat(categoryRelated);
+    }
+
+    related = related.slice(0, MAX_RELATED);
+
+    renderRelatedTours(related);
+}
+
+layData(`http://localhost:3000/products/${id}`)
+.then((product) => {
+    if (product) {
+        renderSanPhamChiTiet(product);
+        findAndRenderRelatedTours(product); 
+    } else {
+        document.getElementById("product-detail").innerHTML = '<h1>Không tìm thấy tour này.</h1>';
+    }
+});
+
+
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const addToCart = (product) => {
+  let item = cart.find((p) => p.id === product.id);
   if (!item) {
-    cart.push({ ...product, quantity: 1 }); //Thêm một sản phẩm mới vào giỏ hàng, dùng ...product để copy toàn bộ thông tin sản phẩm từ product và gán thêm thuộc tính quantity: 1 để quản lý số lượng.
-    console.log(cart);
+    cart.push({ ...product, quantity: 1 });
   } else {
-    item.quantity++; //nếu có rồi thì thêm 1
+    item.quantity++;
   }
   localStorage.setItem("cart", JSON.stringify(cart));
    alert("🎉 Đặt hàng thành công! Sản phẩm đã được thêm vào giỏ hàng.");
+   updateCartCount();
 };
 
 const updateCartCount = () => {
@@ -215,23 +292,7 @@ const updateCartCount = () => {
   document.getElementById("cart-count").textContent = total;
 };
 
-
 updateCartCount();
-
-
-const addCart = (product) => {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let item = cart.find((p) => p.id === product.id);
-  if (!item) {
-    cart.push({ ...product, quantity: 1 });
-    alert("🛒 Đặt hàng thành công!");
-  } else {
-    item.quantity++;
-    alert("🛒 Tăng số lượng sản phẩm trong giỏ!");
-  }
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount(); 
-};
 
 const toggleBtn = document.getElementById("toggle");
 const header = document.querySelector("header");
